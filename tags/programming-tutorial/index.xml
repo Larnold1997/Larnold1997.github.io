@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Programming Tutorial | Academic</title>
+    <title>Programming Tutorial | Home</title>
     <link>/tags/programming-tutorial/</link>
       <atom:link href="/tags/programming-tutorial/index.xml" rel="self" type="application/rss+xml" />
     <description>Programming Tutorial</description>
@@ -14,9 +14,9 @@
     
     <item>
       <title>Terminal Commands 101</title>
-      <link>/project/internal-project/</link>
+      <link>/project/terminal101/</link>
       <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
+      <guid>/project/terminal101/</guid>
       <description>&lt;h2 id=&#34;some-opening-remarks&#34;&gt;Some Opening Remarks&lt;/h2&gt;
 &lt;p&gt;Throughout this document, I will use font that looks like &lt;code&gt;this&lt;/code&gt; for terminal commands, keyboard prompts (e.g. press &lt;code&gt;spacebar&lt;/code&gt;), and text that you may see in the terminal window.&lt;/p&gt;
 &lt;p&gt;You should save the accompanying document &lt;a href=&#34;tutorial.txt&#34; download&gt;tutorial.txt&lt;/a&gt; to your desktop so that you can complete one of the exercises without added headache.&lt;/p&gt;
