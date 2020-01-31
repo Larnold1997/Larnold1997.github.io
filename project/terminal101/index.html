@@ -580,9 +580,7 @@
 <ol start="7">
 <li><strong>Command 7: <code>cat</code>, <code>head</code>, and <code>tail</code></strong></li>
 </ol>
-<p>Terminal has some built-in text editors (e.g. <code>nano</code> and <code>vim</code>) that may be of interest to you as a &ldquo;next step&rdquo; after completing this tutorial. (Alternatively, it is possible to open some other popular text editors in terminal, such as <code>Atom</code>.^[See 
-<a href="http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html" target="_blank" rel="noopener">http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html</a>
- for a short tutorial.]) For simplicity, however, suppose you are not interested in editing a document but rather merely want to read its contents. This is precisely the purpose of <code>cat</code>, short for <em>concatenate</em>: <code>cat file</code> displays the contents of <code>file</code> in the terminal.</p>
+<p>Terminal has some built-in text editors (e.g. <code>nano</code> and <code>vim</code>) that may be of interest to you as a &ldquo;next step&rdquo; after completing this tutorial. (Alternatively, it is possible to open some other popular text editors in terminal, such as <code>Atom</code>.<a href="#note1" id="note1ref"><sup>1</sup></a> For simplicity, however, suppose you are not interested in editing a document but rather merely want to read its contents. This is precisely the purpose of <code>cat</code>, short for <em>concatenate</em>: <code>cat file</code> displays the contents of <code>file</code> in the terminal.</p>
 <blockquote>
 <p><em>Exercise: type <code>cat tutorial.txt</code></em></p>
 </blockquote>
@@ -597,7 +595,7 @@
 <ol start="8">
 <li><strong>Command 8: <code>grep</code></strong></li>
 </ol>
-<p>The command <code>cat</code> can quickly fill the terminal with text if you use it on a large file. Instead of reading through an entire file, suppose you are instead interested in only a subset of it, but that the subset is not merely the beginning or ending of the file. For instance, <code>tutorial.txt</code> contains a few lines of sample data that mimic a data file that you may come across in your research. Perhaps you are only interested in the values from the month of January. The command <code>grep</code> can be used to search text files. <code>grep expression file</code> searches <code>file</code> for <code>expression</code> and displays the contents of all of the lines in <code>file</code> that contain <code>expression</code>. (<code>grep</code> is short for <em>globally search a regular expression^[You may wish to Google regular expressions to learn some more tools that enhance the functionality of <code>grep</code> and other command line arguments.] and print</em>.) Note that by default <code>grep</code> is case-sensitive; the flag <code>-i</code> performs case insensitive matching.</p>
+<p>The command <code>cat</code> can quickly fill the terminal with text if you use it on a large file. Instead of reading through an entire file, suppose you are instead interested in only a subset of it, but that the subset is not merely the beginning or ending of the file. For instance, <code>tutorial.txt</code> contains a few lines of sample data that mimic a data file that you may come across in your research. Perhaps you are only interested in the values from the month of January. The command <code>grep</code> can be used to search text files. <code>grep expression file</code> searches <code>file</code> for <code>expression</code> and displays the contents of all of the lines in <code>file</code> that contain <code>expression</code>. (<code>grep</code> is short for <em>globally search a regular expression and print</em>.<a href="#note2" id="note2ref"><sup>2</sup></a>) Note that by default <code>grep</code> is case-sensitive; the flag <code>-i</code> performs case insensitive matching.</p>
 <blockquote>
 <p><em>Exercise: type <code>grep Jan tutorial.txt</code></em></p>
 </blockquote>
@@ -634,6 +632,10 @@
 <blockquote>
 <p><em>Exercise: type <code>clear</code> to clean your terminal window, then <code>pwd</code> to verify that your current directory is <code>TerminalTutorial/</code></em></p>
 </blockquote>
+<p><a id="note1" href="#note1ref"><sup>1</sup></a> See 
+<a href="http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html" target="_blank" rel="noopener">here</a>
+ for a short tutorial.</p>
+<p><a id="note2" href="#note2ref"><sup>2</sup></a> You may wish to Google regular expressions to learn some more tools that enhance the functionality of <code>grep</code> and other command line arguments.</p>
 
     </div>
 

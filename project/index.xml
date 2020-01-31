@@ -102,9 +102,7 @@
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;&lt;strong&gt;Command 7: &lt;code&gt;cat&lt;/code&gt;, &lt;code&gt;head&lt;/code&gt;, and &lt;code&gt;tail&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Terminal has some built-in text editors (e.g. &lt;code&gt;nano&lt;/code&gt; and &lt;code&gt;vim&lt;/code&gt;) that may be of interest to you as a &amp;ldquo;next step&amp;rdquo; after completing this tutorial. (Alternatively, it is possible to open some other popular text editors in terminal, such as &lt;code&gt;Atom&lt;/code&gt;.^[See 
-&lt;a href=&#34;http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html&lt;/a&gt;
- for a short tutorial.]) For simplicity, however, suppose you are not interested in editing a document but rather merely want to read its contents. This is precisely the purpose of &lt;code&gt;cat&lt;/code&gt;, short for &lt;em&gt;concatenate&lt;/em&gt;: &lt;code&gt;cat file&lt;/code&gt; displays the contents of &lt;code&gt;file&lt;/code&gt; in the terminal.&lt;/p&gt;
+&lt;p&gt;Terminal has some built-in text editors (e.g. &lt;code&gt;nano&lt;/code&gt; and &lt;code&gt;vim&lt;/code&gt;) that may be of interest to you as a &amp;ldquo;next step&amp;rdquo; after completing this tutorial. (Alternatively, it is possible to open some other popular text editors in terminal, such as &lt;code&gt;Atom&lt;/code&gt;.&lt;a href=&#34;#note1&#34; id=&#34;note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; For simplicity, however, suppose you are not interested in editing a document but rather merely want to read its contents. This is precisely the purpose of &lt;code&gt;cat&lt;/code&gt;, short for &lt;em&gt;concatenate&lt;/em&gt;: &lt;code&gt;cat file&lt;/code&gt; displays the contents of &lt;code&gt;file&lt;/code&gt; in the terminal.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;cat tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -119,7 +117,7 @@
 &lt;ol start=&#34;8&#34;&gt;
 &lt;li&gt;&lt;strong&gt;Command 8: &lt;code&gt;grep&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;The command &lt;code&gt;cat&lt;/code&gt; can quickly fill the terminal with text if you use it on a large file. Instead of reading through an entire file, suppose you are instead interested in only a subset of it, but that the subset is not merely the beginning or ending of the file. For instance, &lt;code&gt;tutorial.txt&lt;/code&gt; contains a few lines of sample data that mimic a data file that you may come across in your research. Perhaps you are only interested in the values from the month of January. The command &lt;code&gt;grep&lt;/code&gt; can be used to search text files. &lt;code&gt;grep expression file&lt;/code&gt; searches &lt;code&gt;file&lt;/code&gt; for &lt;code&gt;expression&lt;/code&gt; and displays the contents of all of the lines in &lt;code&gt;file&lt;/code&gt; that contain &lt;code&gt;expression&lt;/code&gt;. (&lt;code&gt;grep&lt;/code&gt; is short for &lt;em&gt;globally search a regular expression^[You may wish to Google regular expressions to learn some more tools that enhance the functionality of &lt;code&gt;grep&lt;/code&gt; and other command line arguments.] and print&lt;/em&gt;.) Note that by default &lt;code&gt;grep&lt;/code&gt; is case-sensitive; the flag &lt;code&gt;-i&lt;/code&gt; performs case insensitive matching.&lt;/p&gt;
+&lt;p&gt;The command &lt;code&gt;cat&lt;/code&gt; can quickly fill the terminal with text if you use it on a large file. Instead of reading through an entire file, suppose you are instead interested in only a subset of it, but that the subset is not merely the beginning or ending of the file. For instance, &lt;code&gt;tutorial.txt&lt;/code&gt; contains a few lines of sample data that mimic a data file that you may come across in your research. Perhaps you are only interested in the values from the month of January. The command &lt;code&gt;grep&lt;/code&gt; can be used to search text files. &lt;code&gt;grep expression file&lt;/code&gt; searches &lt;code&gt;file&lt;/code&gt; for &lt;code&gt;expression&lt;/code&gt; and displays the contents of all of the lines in &lt;code&gt;file&lt;/code&gt; that contain &lt;code&gt;expression&lt;/code&gt;. (&lt;code&gt;grep&lt;/code&gt; is short for &lt;em&gt;globally search a regular expression and print&lt;/em&gt;.&lt;a href=&#34;#note2&#34; id=&#34;note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;) Note that by default &lt;code&gt;grep&lt;/code&gt; is case-sensitive; the flag &lt;code&gt;-i&lt;/code&gt; performs case insensitive matching.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;grep Jan tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -156,6 +154,10 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;clear&lt;/code&gt; to clean your terminal window, then &lt;code&gt;pwd&lt;/code&gt; to verify that your current directory is &lt;code&gt;TerminalTutorial/&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;a id=&#34;note1&#34; href=&#34;#note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; See 
+&lt;a href=&#34;http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+ for a short tutorial.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note2&#34; href=&#34;#note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; You may wish to Google regular expressions to learn some more tools that enhance the functionality of &lt;code&gt;grep&lt;/code&gt; and other command line arguments.&lt;/p&gt;
 </description>
     </item>
     
