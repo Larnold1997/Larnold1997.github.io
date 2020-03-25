@@ -196,5 +196,154 @@
 </description>
     </item>
     
+    <item>
+      <title>Terminal Commands 101</title>
+      <link>/project/terminal101/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/project/terminal101/</guid>
+      <description>&lt;h2 id=&#34;some-opening-remarks&#34;&gt;Some Opening Remarks&lt;/h2&gt;
+&lt;p&gt;Throughout this document, I will use font that looks like &lt;code&gt;this&lt;/code&gt; for terminal commands, keyboard prompts (e.g. press &lt;code&gt;spacebar&lt;/code&gt;), and text that you may see in the terminal window.&lt;/p&gt;
+&lt;p&gt;You should save the accompanying document &lt;a href=&#34;tutorial.txt&#34; download&gt;tutorial.txt&lt;/a&gt; to your desktop so that you can complete one of the exercises without added headache.&lt;/p&gt;
+&lt;h2 id=&#34;opening-and-using-terminal&#34;&gt;Opening and Using Terminal&lt;/h2&gt;
+&lt;p&gt;On Macs, the terminal is a pre-installed application that allows users to interact with their computer via command prompts. By default, it can be found in your Utilities folder. If you are not sure how to access it, conduct a spotlight search by pressing &lt;code&gt;Command-Spacebar&lt;/code&gt; and then typing &lt;code&gt;terminal&lt;/code&gt;. Opening terminal should yield a small window with a white background. You should have a cursor that allows you to type in this window. However, you cannot use this cursor to click; if you need to navigate the command line (e.g. to fix a typo), use your arrows.&lt;/p&gt;
+&lt;p&gt;Using terminal commands is simple: just type the appropriate (case-sensitive) syntax and then press &lt;code&gt;enter&lt;/code&gt;!&lt;/p&gt;
+&lt;h2 id=&#34;ten-basic-commands&#34;&gt;Ten Basic Commands&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Command 1: &lt;code&gt;pwd&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The command &lt;code&gt;pwd&lt;/code&gt; stands for &lt;em&gt;present working directory&lt;/em&gt; and typing it will return your current directory. (&amp;ldquo;Directory&amp;rdquo; and &amp;ldquo;folder&amp;rdquo; are mostly interchangeable terms.)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;pwd&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Since you just opened terminal, the directory that is returned is known as your &lt;em&gt;home directory&lt;/em&gt;. Your home directory is analogous to a base of operations: it holds all of your personal files, programs, and directories. By default, the name of your home directory is identical to the name your username; my home directory is &lt;code&gt;/Users/LoganArnold2&lt;/code&gt;. Additionally, the tilde (&lt;code&gt;~&lt;/code&gt;) is a shorthand that refers to your home directory.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;path&lt;/em&gt; is a description of a file&amp;rsquo;s location. For example, &lt;code&gt;/Users/LoganArnold2/README&lt;/code&gt; (equivalently, &lt;code&gt;~/README&lt;/code&gt;) is a path to a file called &lt;code&gt;README&lt;/code&gt; contained within my home directory. Notice that forward slashes (&lt;code&gt;/&lt;/code&gt;) separate components of a path.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 2: &lt;code&gt;ls&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The command &lt;code&gt;ls&lt;/code&gt; will &lt;em&gt;list&lt;/em&gt; the contents of your present working directory.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;ls&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You probably have folders named &lt;code&gt;Applications/&lt;/code&gt;, &lt;code&gt;Desktop/&lt;/code&gt;, and &lt;code&gt;Downloads/&lt;/code&gt;, among other folders and maybe even some files or programs located in your home directory. Notice, too, that these directories are displayed with a &lt;code&gt;/&lt;/code&gt; at the end of their name; the ending &lt;code&gt;/&lt;/code&gt; differentiates between files and directories.&lt;/p&gt;
+&lt;p&gt;It is worth mentioning that &lt;code&gt;ls&lt;/code&gt; does not, in fact, list all of the files in your present working directory, but only those ones that do not begin with a dot (&lt;code&gt;.&lt;/code&gt;). Files beginning with &lt;code&gt;.&lt;/code&gt; are known as &lt;em&gt;hidden files&lt;/em&gt; and usually contain important program configuration information. They are hidden because you should not change them unless you are very familiar with Unix!&lt;/p&gt;
+&lt;p&gt;To list all files in your home directory, including those whose names begin with &lt;code&gt;.&lt;/code&gt;, type &lt;code&gt;ls -a&lt;/code&gt;. The &lt;code&gt;-a&lt;/code&gt; after &lt;code&gt;ls&lt;/code&gt; is an example of a &lt;em&gt;flag&lt;/em&gt; and can be thought of as an argument or option for the command &lt;code&gt;ls&lt;/code&gt; that changes the behavior of the command. (Most command line arguments have a plethora of flags, but this tutorial will only scratch the surface of this topic.)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;ls -a&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 3: &lt;code&gt;cd&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Moving around directories is simple. The command &lt;code&gt;cd&lt;/code&gt; stands for &lt;em&gt;change directory&lt;/em&gt; and combining &lt;code&gt;cd&lt;/code&gt; with a directory named &lt;code&gt;dir&lt;/code&gt; will change your present working directory to &lt;code&gt;dir&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;cd Desktop/&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Your present working directory should now be your Desktop. Feel free to verify this using either &lt;code&gt;pwd&lt;/code&gt; or &lt;code&gt;ls&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Unix has some shortcuts that are quite useful, especially when changing directories.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;When typing the name of a directory or file within your present working directory, pressing &lt;code&gt;tab&lt;/code&gt; will auto-complete as much as possible. For example, in the previous exercise, typing &lt;code&gt;cd Desk&lt;/code&gt; followed by &lt;code&gt;tab&lt;/code&gt; would likely auto-complete to the desired &lt;code&gt;cd Desktop/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A single dot, &lt;code&gt;.&lt;/code&gt;, refers to the current directory. Thus, typing &lt;code&gt;cd .&lt;/code&gt; essentially does nothing because you are changing your directory to your current directory. This may not seem useful at first, but it can save a lot of typing in more advanced settings.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Two dots, &lt;code&gt;..&lt;/code&gt;, refers to the &lt;em&gt;parent directory&lt;/em&gt;, the directory in which your current directory is located.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lastly, it is worth mentioning that &lt;code&gt;cd&lt;/code&gt; on its own (i.e. without specifying &lt;code&gt;dir&lt;/code&gt;) will change the present working directory to the home directory. This can be helpful if you are lost within a hierarchy of sub-directories!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Navigate to your home directory, then back to the Desktop - twice. You should be able to navigate from the Desktop to your home directory using (at least) two distinct commands!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 4: &lt;code&gt;mkdir&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So far, all of the directories you have seen and navigated through have been ones that were on your computer previously. Often, you might be interested in creating a new directory. The command &lt;code&gt;mkdir&lt;/code&gt;, short for &lt;em&gt;make directory&lt;/em&gt; followed by &lt;code&gt;dir&lt;/code&gt; will create a new directory named &lt;code&gt;dir&lt;/code&gt; (assuming a directory with this name did not exist previously).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;mkdir TerminalTutorial&lt;/code&gt; and change your working directory to &lt;code&gt;TerminalTutorial/&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 5: &lt;code&gt;cp&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The &lt;code&gt;TerminalTutorial&lt;/code&gt; directory is currently empty (verify with &lt;code&gt;ls&lt;/code&gt;). The command &lt;code&gt;cp&lt;/code&gt; is used to copy a file from one location to another. Specifically, &lt;code&gt;cp file dir&lt;/code&gt; copies &lt;code&gt;file&lt;/code&gt; to &lt;code&gt;dir&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;cp ../tutorial.txt .&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This command copied the accompanying &lt;code&gt;tutorial.txt&lt;/code&gt; document into your present working directory by specifying the &lt;em&gt;relative path&lt;/em&gt; from your present working directory to the file &lt;code&gt;tutorial.txt&lt;/code&gt;. (Recall that &lt;code&gt;..&lt;/code&gt; refers to the parent directory, in this case &lt;code&gt;Desktop/&lt;/code&gt;, and &lt;code&gt;.&lt;/code&gt; refers to the current directory.) Since &lt;code&gt;cp&lt;/code&gt; copies files, you still have a version saved on the desktop.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cp&lt;/code&gt; can also be used to copy the contents of an existing file to a new file; this can be useful if you want to create a backup of a particular file or if you want to make changes to a file while keeping a copy of the original. The syntax to accomplish this is &lt;code&gt;cp file1 file2&lt;/code&gt; where &lt;code&gt;file1&lt;/code&gt; and &lt;code&gt;file2&lt;/code&gt; are the names of the original and new files, respectively.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;cp tutorial.txt tutorial.backup.txt&lt;/code&gt; followed by &lt;code&gt;ls&lt;/code&gt; to verify that you created a copy&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 6: &lt;code&gt;mv&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Sometimes you may prefer to move or rename a file rather than create a copy. &lt;code&gt;mv&lt;/code&gt; is used analogously to &lt;code&gt;cp&lt;/code&gt; but it &lt;em&gt;moves&lt;/em&gt; the contents of a file rather than copying them. Thus, &lt;code&gt;mv file dir&lt;/code&gt; moves &lt;code&gt;file&lt;/code&gt; to &lt;code&gt;dir&lt;/code&gt;, while &lt;code&gt;mv file1 file2&lt;/code&gt; renames &lt;code&gt;file1&lt;/code&gt; to &lt;code&gt;file2&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Use &lt;code&gt;mkdir&lt;/code&gt; to make a directory called &lt;code&gt;backups&lt;/code&gt; and then type &lt;code&gt;mv tutorial.backup.txt backups&lt;/code&gt;. Use &lt;code&gt;ls&lt;/code&gt;, then change directories to &lt;code&gt;backups/&lt;/code&gt; and use &lt;code&gt;ls&lt;/code&gt; again to verify that &lt;code&gt;tutorial.backup.txt&lt;/code&gt; has moved.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Use &lt;code&gt;mv tutorial.backup.txt tutorial.txt&lt;/code&gt; to revert the name of the file to its original&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 7: &lt;code&gt;cat&lt;/code&gt;, &lt;code&gt;head&lt;/code&gt;, and &lt;code&gt;tail&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Terminal has some built-in text editors (e.g. &lt;code&gt;nano&lt;/code&gt; and &lt;code&gt;vim&lt;/code&gt;) that may be of interest to you as a &amp;ldquo;next step&amp;rdquo; after completing this tutorial. (Alternatively, it is possible to open some other popular text editors in terminal, such as &lt;code&gt;Atom&lt;/code&gt;.&lt;a href=&#34;#note1&#34; id=&#34;note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.For simplicity, however, suppose you are not interested in editing a document but rather merely want to read its contents. This is precisely the purpose of &lt;code&gt;cat&lt;/code&gt;, short for &lt;em&gt;concatenate&lt;/em&gt;: &lt;code&gt;cat file&lt;/code&gt; displays the contents of &lt;code&gt;file&lt;/code&gt; in the terminal.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;cat tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;While &lt;code&gt;cat file&lt;/code&gt; displays the entirety of &lt;code&gt;file&lt;/code&gt;, sometimes it is more convenient to look at only the beginning or end of &lt;code&gt;file&lt;/code&gt;; this can be done by the appropriately named commands &lt;code&gt;head&lt;/code&gt; and &lt;code&gt;tail&lt;/code&gt;, respectively. By default, each of these commands displays the first (or last) 10 lines of &lt;code&gt;file&lt;/code&gt;. The flag &lt;code&gt;-n&lt;/code&gt; followed by a number will display the first (or last) number of lines of &lt;code&gt;file&lt;/code&gt;. (Thus &lt;code&gt;head file&lt;/code&gt; and &lt;code&gt;head -n 10 file&lt;/code&gt; produce identical results.)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;head tutorial.txt&lt;/code&gt; and &lt;code&gt;tail tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: use &lt;code&gt;head&lt;/code&gt; and &lt;code&gt;tail&lt;/code&gt; along with &lt;code&gt;-n&lt;/code&gt; to display the first and last line of &lt;code&gt;tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is worth noting that &lt;code&gt;cat&lt;/code&gt;, &lt;code&gt;head&lt;/code&gt;, and &lt;code&gt;tail&lt;/code&gt; are simple commands that will not yield useful results when used on many file formats, e.g. &lt;code&gt;.pdf&lt;/code&gt;.&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 8: &lt;code&gt;grep&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The command &lt;code&gt;cat&lt;/code&gt; can quickly fill the terminal with text if you use it on a large file. Instead of reading through an entire file, suppose you are instead interested in only a subset of it, but that the subset is not merely the beginning or ending of the file. For instance, &lt;code&gt;tutorial.txt&lt;/code&gt; contains a few lines of sample data that mimic a data file that you may come across in your research. Perhaps you are only interested in the values from the month of January. The command &lt;code&gt;grep&lt;/code&gt; can be used to search text files. &lt;code&gt;grep expression file&lt;/code&gt; searches &lt;code&gt;file&lt;/code&gt; for &lt;code&gt;expression&lt;/code&gt; and displays the contents of all of the lines in &lt;code&gt;file&lt;/code&gt; that contain &lt;code&gt;expression&lt;/code&gt;. (&lt;code&gt;grep&lt;/code&gt; is short for &lt;em&gt;globally search a regular expression&lt;a id=&#34;note2&#34; href=&#34;#note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; and print&lt;/em&gt;.) Note that by default &lt;code&gt;grep&lt;/code&gt; is case-sensitive; the flag &lt;code&gt;-i&lt;/code&gt; performs case insensitive matching.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;grep Jan tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; can also be used to search for phrases; use single or double quotes (&lt;code&gt;&#39;&lt;/code&gt; or &lt;code&gt;&amp;quot;&lt;/code&gt;) to enclose the phrase.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;grep Hello tutorial.txt&lt;/code&gt; and &lt;code&gt;grep &#39;Hello, world.&#39; tutorial.txt&lt;/code&gt; and compare the results&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Finally, you may want to search for multiple expressions at the same time. There are two options to do this: &lt;code&gt;grep -e expression1 -e expression 2 file&lt;/code&gt; and &lt;code&gt;egrep &#39;expression1|expression2 file&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Search &lt;code&gt;tutorial.txt&lt;/code&gt; for both &lt;code&gt;Oct&lt;/code&gt; and &lt;code&gt;Nov&lt;/code&gt; at the same time.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 9: &lt;code&gt;rm&lt;/code&gt; and &lt;code&gt;rmdir&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Deleting files and directories is both useful and simple. &lt;code&gt;rm file&lt;/code&gt; and &lt;code&gt;rmdir dir&lt;/code&gt; deletes a file named &lt;code&gt;file&lt;/code&gt; or a directory named &lt;code&gt;dir&lt;/code&gt;, respectively. Use these commands with caution, however! It can be difficult or impossible to recover items deleted via these commands.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;rm tutorial.txt&lt;/code&gt; then &lt;code&gt;ls&lt;/code&gt; to verify that &lt;code&gt;tutorial.txt&lt;/code&gt; has been deleted&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Change directories to the parent directory, &lt;code&gt;TerminalTutorial/&lt;/code&gt;, and then type &lt;code&gt;rmdir backups&lt;/code&gt; to delete the directory of backups. Again, use &lt;code&gt;ls&lt;/code&gt; to verify that the directory has been deleted.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 10: &lt;code&gt;man&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This tutorial has just scratched the surface of what can be done using terminal commands. If you forget what a particular command does, want to learn more about the flags that can be used for the command, or come across a new command altogether, the terminal offers a robust description of each command. &lt;code&gt;man command&lt;/code&gt; opens up the &lt;em&gt;manual&lt;/em&gt; for &lt;code&gt;command&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Use &lt;code&gt;man&lt;/code&gt; to read more about one or more of the commands covered in this tutorial. Type &lt;code&gt;q&lt;/code&gt; to exit the manual when finished.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Use &lt;code&gt;man&lt;/code&gt; to learn about a command not covered in this tutorial, such as &lt;code&gt;diff&lt;/code&gt;, &lt;code&gt;sed&lt;/code&gt;, or &lt;code&gt;gzip&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;a-bonus-command-clear&#34;&gt;A Bonus Command: &lt;code&gt;clear&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;By now, your terminal is likely filled with text. Although opening a new terminal window is an easy way to obtain a clean slate, your working directory in that new window will initially be your home directory. If you are buried in a hierarchy of sub-directories, it more convenient to use the command &lt;code&gt;clear&lt;/code&gt; to remove the text in the terminal while maintaining your working directory.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;clear&lt;/code&gt; to clean your terminal window, then &lt;code&gt;pwd&lt;/code&gt; to verify that your current directory is &lt;code&gt;TerminalTutorial/&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a id=&#34;note1&#34; href=&#34;#note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Go 
+&lt;a href=&#34;http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+ for a short tutorial.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note2&#34; href=&#34;#note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; You may wish to Google regular expressions to learn some more tools that enhance the functionality of &lt;code&gt;grep&lt;/code&gt; and other command line arguments.]&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

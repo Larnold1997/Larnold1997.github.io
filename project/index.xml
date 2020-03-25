@@ -5,7 +5,7 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Projects</title>
@@ -13,35 +13,490 @@
     </image>
     
     <item>
-      <title></title>
-      <link>/project/git101/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/git101/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
+      <title>Compartment Models in Epidemiology Part 1</title>
       <link>/project/sir_model/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/project/sir_model/</guid>
-      <description></description>
+      <description>&lt;p&gt;This post is an introduction to the basic models of disease spread, a topic that has entered the vernacular in recent weeks due to the COVID-19 pandemic. The focus will be the Susceptible-Infected-Recovery compartmental model.&lt;/p&gt;
+&lt;h2 id=&#34;compartment-models&#34;&gt;Compartment Models&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Compartment models&lt;/em&gt; are a broad class of mathematical models used to describe how components of a system move around from one sub-section to another sub-section within the larger system. Sometimes, such models are called &amp;ldquo;bathtub models,&amp;rdquo; as the underlying math describes the &amp;ldquo;flow&amp;rdquo; (i.e. of water) from a source (the faucet) to a sink (the drain). Sometimes, the flow is one-way, meaning that the component cannot return to the source once it has left; other times, the flow is bi-directional, and a component can return to its source. Compartment models have many applications, including ecology, economics, and, notably, epidemiology.&lt;/p&gt;
+&lt;h2 id=&#34;sir-model&#34;&gt;SIR Model&lt;/h2&gt;
+&lt;p&gt;The most elementary compartmental model in epidemiology is the &lt;em&gt;Susceptible-Infected-Recovery Model&lt;/em&gt;, commonly called the &lt;em&gt;SIR Model&lt;/em&gt;. The entire population is divided into three groups:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;People who have not had a disease and therefore are &lt;em&gt;susceptible&lt;/em&gt; (S)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;People who currently have the disease and therefore are &lt;em&gt;infected&lt;/em&gt; (I)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;People who have &lt;em&gt;recovered&lt;/em&gt; (R) from the disease&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This can be represented by the following basic graphic.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;SIR.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Notice that this model assumes that the population is constant (i.e. no births or deaths) and that, once recovered, an individual cannot become infected again. If we let &lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=\inline&amp;space;\beta&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?\inline&amp;space;\beta&#34; title=&#34;\beta&#34; /&gt;&lt;/a&gt;describe infection rate and &lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=\inline&amp;space;\gamma&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?\inline&amp;space;\gamma&#34; title=&#34;\gamma&#34; /&gt;&lt;/a&gt; describe recovery rate, then we have the following system of ordinary differential equations:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=\frac{dS}{dt}&amp;space;=&amp;space;-\beta&amp;space;IS,&amp;space;\frac{dI}{dt}&amp;space;=&amp;space;\beta&amp;space;IS&amp;space;-&amp;space;\gamma&amp;space;R,&amp;space;\frac{dR}{dt}&amp;space;=&amp;space;\gamma&amp;space;R&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?\frac{dS}{dt}&amp;space;=&amp;space;-\beta&amp;space;IS,&amp;space;\frac{dI}{dt}&amp;space;=&amp;space;\beta&amp;space;IS&amp;space;-&amp;space;\gamma&amp;space;R,&amp;space;\frac{dR}{dt}&amp;space;=&amp;space;\gamma&amp;space;R&#34; title=&#34;\frac{dS}{dt} = -\beta IS, \frac{dI}{dt} = \beta IS - \gamma R, \frac{dR}{dt} = \gamma R&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Observing that the sum of the three derivatives is zero proves that the SIR Model assumes the total population is constant.&lt;/p&gt;
+&lt;p&gt;The so-called &lt;em&gt;basic reproduction number&lt;/em&gt; has also entered everyday conversation: it describes the expected number of new infections from a single infection in a population where all subjects are susceptible. In the SIR Model, it is given by the ratio of the rate of infection over the rate of recovery:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=R_0&amp;space;=&amp;space;\frac{\beta}{\gamma}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?R_0&amp;space;=&amp;space;\frac{\beta}{\gamma}&#34; title=&#34;R_0 = \frac{\beta}{\gamma}&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rewriting the rate of change of infected individuals illustrates the importance of the basic reproductive number:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=\frac{dI}{dt}&amp;space;=&amp;space;(R_0S&amp;space;-&amp;space;1)\gamma&amp;space;I&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?\frac{dI}{dt}&amp;space;=&amp;space;(R_0S&amp;space;-&amp;space;1)\gamma&amp;space;I&#34; title=&#34;\frac{dI}{dt} = (R_0S - 1)\gamma I&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thus&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=R_0&amp;space;&gt;&amp;space;\frac{1}{S(0)}&amp;space;\Rightarrow&amp;space;\frac{dI}{dt}(0)&amp;space;&gt;&amp;space;0&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?R_0&amp;space;&gt;&amp;space;\frac{1}{S(0)}&amp;space;\Rightarrow&amp;space;\frac{dI}{dt}(0)&amp;space;&gt;&amp;space;0&#34; title=&#34;R_0 &gt; \frac{1}{S(0)} \Rightarrow \frac{dI}{dt}(0) &gt; 0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;causing an &lt;em&gt;epidemic&lt;/em&gt; in which the percentage of infected individuals can become quite large.&lt;/p&gt;
+&lt;h2 id=&#34;simulation&#34;&gt;Simulation&lt;/h2&gt;
+&lt;p&gt;See my 
+&lt;a href=&#34;https://larnold1997.shinyapps.io/sirmodel/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Shiny app&lt;/a&gt;
+ to view a graph of the fraction of individuals in the S, I, and R compartments over time, and how this graph changes as different parameters change. (This app assumes that everyone who is not infected initially is susceptible.)&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title></title>
+      <title>Spider-Man (PS4) Review</title>
       <link>/project/spider-man_ps4/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/project/spider-man_ps4/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;feels-like-spider-man&#34;&gt;Feels Like Spider-Man&lt;/h2&gt;
+&lt;p&gt;It is a trite meme at this point in time, but Spider-Man (PS4)&amp;lsquo;s best feature is that the game makes you&amp;hellip;feel like Spider-Man. The web-swinging is enormously fun, so much so that I rarely fast traveled: I enjoyed spending a few extra minutes traversing the city, taking in the beautiful depiction of NYC before starting a mission. It is not uncommon for video game characters to talk to themselves to aid in character development and story progression; in the context of Spider-Man, however, this makes total sense, as talking to/joking with himself is one of the Web-Slinger&amp;rsquo;s defining characteristics. The combat (see below) also makes the player feel like a formidable superhero.&lt;/p&gt;
+&lt;h2 id=&#34;feels-like-peter&#34;&gt;Feels like Peter&lt;/h2&gt;
+&lt;p&gt;Players expect to enjoy playing as Spider-Man; the game succeeds in also making you enjoy playing as Peter. Indeed, this is quite important for a quality Spider-Man game, because Spider-Man has always been as much about the superhero&amp;rsquo;s secret identity as it has been about crime-fighting. Peter is fundamental to any good Spider-Man story due to his relatability, and Insomniac masterfully captures this reality. For instance, he is bad with girls; there is a very touching scene when he texts MJ, accidentally saying &amp;ldquo;it&amp;rsquo;s over&amp;rdquo; when referring to taking down Martin Li, but MJ&amp;rsquo;s initial assumption is that Peter was referring to their relationship.
+The game is filled with fun Peter-MJ interactions, another favorite of mine being “Did you just leave your clothes in the kitchen?!&amp;rdquo; Finally, Insomniac accurately portrays what a young Peter would be like in modern times - e.g. a research project that aims to create plastic-eating bacteria and his use of social media and text messaging.&lt;/p&gt;
+&lt;h2 id=&#34;combat&#34;&gt;Combat&lt;/h2&gt;
+&lt;p&gt;The combat system - clearly influenced by Arkham - is fluid and fun, and one of the best features of the game. The basic attack and dodge maneuvers are supplemented by gadgets (e.g. web bomb, electric web) and suit powers (everything from Iron Spider arms to comic book quips). The combat system evolves over the course of the game as Spidey gains new gadgets and abilities as well as encounters new enemies. By the end of the game, combat becomes primarily about prioritizing different enemy types; the new enemy types, in particular, keep combat novel and difficult from start to finish. Spider-Sense makes dodging easier, as the player is alerted to incoming attacks and given a small window of time to respond to them before taking damage. Building up an attack combo raises Spidey&amp;rsquo;s focus meter, which can be used either to heal or to activate the aforementioned suit powers; the focus system therefore creates a nice risk-reward of trying to chain together a high number of consecutive hits while not taking damage.&lt;/p&gt;
+&lt;p&gt;Some critiques:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There is no punishment for unnecessary dodges, perhaps making the game a bit too easy.&lt;/li&gt;
+&lt;li&gt;There never seems to be much incentive to use the different types of attacks and gadgets; rather, the player ends up using the same combinations repeatedly.&lt;/li&gt;
+&lt;li&gt;Using gadgets can make the game too easy.&lt;/li&gt;
+&lt;li&gt;Gadgets slow down the pace of combat due to the wheel select that the player must use to switch between them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;the-story&#34;&gt;The Story&lt;/h2&gt;
+&lt;p&gt;Simply put, this is one of the best Spider-Man stories in any media; indeed, many have argued that it is THE best. Insomniac wasn&amp;rsquo;t afraid to take creative liberties on the source material, with some noteworthy re-imaginings including&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dr. Octopus&amp;rsquo; origin that leads to a neo-Sinister Six&lt;/li&gt;
+&lt;li&gt;Otto and May knowing Peter&amp;rsquo;s secret&lt;/li&gt;
+&lt;li&gt;Miles&amp;rsquo; origin&lt;/li&gt;
+&lt;li&gt;MJ&amp;rsquo;s job&lt;/li&gt;
+&lt;li&gt;JJJ&amp;rsquo;s re-branding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Specifically, the new take on Doc Ock allows Insomniac to tell a story that is primarily about his character progression. The story progression is brilliant: it develops in a way such that the player does not want Otto to become Doctor Octopus; yet from the beginning of the game anyone with a small amount of Spider-Man knowledge likely assumes that the transition is inevitable. Indeed, Otto goes from a scientist that Peter worships, to a character with a degenerative disease that the player wishes to save, to the overarching enemy that united the rest of the Sinister Six against Peter. In some ways, the story is about Peter being the role model to Miles than Otto should have been to him.&lt;/p&gt;
+&lt;h3 id=&#34;bosses&#34;&gt;Bosses&lt;/h3&gt;
+&lt;p&gt;Taking down the Sinister Six requires two fun duo boss battles, one with Electro and Vulture and the other with Rhino and Scorpion. The last two boss battles - Mr. Negative and Dr. Octopus - were not quite as fun, and it would have been more intriguing if the game forced the player straight from the former to the latter, since Dr. Octopus nearly kills Spider-Man and drastically reduces his fighting capabilities after he defeats Mr. Negative. Unfortunately, the middle of the story is void of bosses, and this creates some minor pacing issues.&lt;/p&gt;
+&lt;p&gt;All of the villains, not just Doc Ock, have real motivations that make us feel (somewhat) bad for them:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rhino hated being the Rhino and just wanted to get out of his suit&lt;/li&gt;
+&lt;li&gt;Scorpion was in serious debt from gambling and wanted it all gone&lt;/li&gt;
+&lt;li&gt;Vulture wanted to extend his life as he had spinal cancer and didn&amp;rsquo;t want to die&lt;/li&gt;
+&lt;li&gt;Shocker was being threatened by Li&amp;rsquo;s gang and forced him against his will to become Shocker again, even though he gave up his life of crime&lt;/li&gt;
+&lt;li&gt;Li had severe mental illness and a traumatic past because of a science experiment gone wrong, and even though he was trying to do good by making others happy, his demons sadly got the best of him&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Almost every villain felt human; life gave them the hardest times, and in turn it created monsters.&lt;/p&gt;
+&lt;h3 id=&#34;end-scene&#34;&gt;End Scene&lt;/h3&gt;
+&lt;p&gt;Oh, the ending&amp;hellip;Peter and Ock&amp;rsquo;s last conversation, the culmination of the story, caused me to tear up. But that was nothing compared to the final cutscene. Insomniac ingeniously flipped Uncle Ben&amp;rsquo;s death with Aunt May&amp;rsquo;s death. Whereas Ben died due to a lack of responsibility, Aunt May died due to Peters sense of responsibility:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Take off your mask. I want to see my nephew.&lt;/li&gt;
+&lt;li&gt;You knew?&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve known for a while.&lt;/li&gt;
+&lt;li&gt;I never wanted you to worry &amp;ndash;&lt;/li&gt;
+&lt;li&gt;I DID. And I am so proud of you, and Ben would be too.&lt;/li&gt;
+&lt;li&gt;I don&amp;rsquo;t know what to do&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Yes you do.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;setting-up-the-sequel&#34;&gt;Setting Up the Sequel&lt;/h3&gt;
+&lt;p&gt;In the mid credits scene, Miles reveals to Peter that he has powers, and Peter reciprocates. This could make for some fun co-op action in the sequel, or more varied mission structure that features both Miles and Peter as Spidey.&lt;/p&gt;
+&lt;p&gt;But the end credits scene is when things get quite juicy. Norman Osborn enters a secret laboratory where Harry is kept in stasis with a black, web-like substance. As Osborn places his hand on the tank, the substance reacts and copies him. (Completing the research stations post-credits yields a call from MJ saying that she published an article because Oscorp is going to fund Harry’s stations. They both want to share the news with him, but know they cannot confront Norman about Harry’s whereabouts - yet trust that he is getting the care he needs.)&lt;/p&gt;
+&lt;h2 id=&#34;side-content&#34;&gt;Side Content&lt;/h2&gt;
+&lt;p&gt;Side options are hit or miss. Crimes, though they help with immersion, begin to feel repetitive, especially with the short well of quips Spider-Man spouts at the end of them. Car chases, though they look awesome, are quite simplistic - merely timing triangle and square appropriately, i.e. not much more than glorified QTEs. The criminal bases, separate from the crimes, were quite enjoyable, as they often forced the player into tough combat situations.&lt;/p&gt;
+&lt;p&gt;There are also Reserach Stations and sidequests, both of which feature missions that can be quite fun or somewhat boring.&lt;/p&gt;
+&lt;p&gt;The collectibles, while perhaps overdone, feature some nice nods to the comics and some other fun easter eggs&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;speaking-of-easter-eggs&#34;&gt;Speaking of Easter Eggs&lt;/h2&gt;
+&lt;p&gt;I thought it would be fun to list some of the fun references!&lt;/p&gt;
+&lt;p&gt;To Spider-Man Lore:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Peter mentioning that his parents were spies&lt;/li&gt;
+&lt;li&gt;Referencing the serum that Peter used to revert the Lizard back to Dr. Connors&lt;/li&gt;
+&lt;li&gt;A card from Peter&amp;rsquo;s time working as a photographer for the Daily Bugle signed by Betty Brant and Joe Robertson&lt;/li&gt;
+&lt;li&gt;A scene where Spider-Man lifts debris off himself like in the classic &amp;ldquo;Spider-Man No More!&amp;rdquo; comic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To the larger Marvel universe:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Something “Strange” at Sanctum Sanctorum,&lt;/li&gt;
+&lt;li&gt;The Wakanda Embassy&lt;/li&gt;
+&lt;li&gt;Murdock the blind lawyer&lt;/li&gt;
+&lt;li&gt;Stan Lee cameo as a cook&lt;/li&gt;
+&lt;li&gt;A nod to Captain America when you&amp;rsquo;re fighting one of Hammerhead&amp;rsquo;s shield enemies: &amp;ldquo;You know, I know a guy with a way cooler shield”&lt;/li&gt;
+&lt;li&gt;“It’s Webbin&amp;rsquo; Time” is a reference to the Thing from the Fantastic Four (&amp;ldquo;It’s Clobberin&amp;rsquo; Time&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;Giant bull replaced by Lockjaw from the Inhumans&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And lastly, a nod to Batman: Spider-Man remarks that they &amp;ldquo;would get sued for a spotlight with a spider logo.&amp;rdquo;&lt;/p&gt;
+&lt;h2 id=&#34;attention-to-detail&#34;&gt;Attention to Detail&lt;/h2&gt;
+&lt;p&gt;In addition to the aforementioned easter eggs, there are some other small details that are worth acknowledging - details that don&amp;rsquo;t truly impact a player&amp;rsquo;s enjoyment of the game, but nevertheless illustrate the care Insomniac took when developing it.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spider-Man&amp;rsquo;s voice actor recorded two sets of lines for Spidey&amp;rsquo;s phone conversations, depending on whether the player is or is not swinging.&lt;/li&gt;
+&lt;li&gt;Rockets say “guaranteed to kill spiders.”&lt;/li&gt;
+&lt;li&gt;The suit that you wear appears in cutscenes! While this is perhaps expected, it certainly required a lot of extra legwork to make a reality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;the-flaws&#34;&gt;The Flaws&lt;/h2&gt;
+&lt;p&gt;No game is perfect (except maybe The Last of Us). I loved Spider-Man, but it is worth it to acknowledge its faults so that Insomniac can address them in the sequel.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I have already addressed most of the combat flaws above, but a final one is that it would be quite fun to have a truly endless fighting arena.&lt;/li&gt;
+&lt;li&gt;It is no secret that the levels played as MJ and Miles are slow. They serve as a way to break-up the pace of the bulk of the story missions, and they give the player a new perspective on the story. But I tended to want to rush through these levels to get back to playing as Spider-Man. I think these missions have potential, but they need to be reworked dramatically.&lt;/li&gt;
+&lt;li&gt;The game is not without some technical errors. Notably, I had to reload three times due to glitches: twice due to audio that cut out, and once due to an enemy that was stuck behind a wall on a level that would not end until all enemies were defeated.&lt;/li&gt;
+&lt;li&gt;Even within the rules of world, realism is lacking: there is no fall damage, no collateral damage from rockets, civilians cannot die even as a war between Spider-Man and criminals plays out around them. (And no one reacts to the secret Spidey underwear costume!)&lt;/li&gt;
+&lt;li&gt;The stealth aspects leave some to be desired. Stealth sections were often reduced to Spider-Man simply swinging above everyone. There was never much of a punishment for being caught, yet it was always frustrating when a single enemy seeing you immediately alerts the rest of the foes of your location.&lt;/li&gt;
+&lt;li&gt;Even the amazing web-swinging can be improved. For instance, it could be neat to have Spider-Man shoot webs out of either his left hand or his right hand, depending on which button was pressed. Further, when trying to zip around quickly, the player sometimes ends up in unintended spots that at best break the flow of the game and at worst can lead to Spidey being spotted in a stealth section or incurring massive damage in a combat section.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dlc&#34;&gt;DLC&lt;/h2&gt;
+&lt;p&gt;Overall, the DLC trilogy is a good, but not great Spider-Man story that does a little to spice up the gameplay, but nothing groundbreaking. It is worthwhile if you loved the main game, but probably not otherwise.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion-a-beautiful-love-letter-to-everything-spidey&#34;&gt;Conclusion: A beautiful love letter to everything Spidey.&lt;/h2&gt;
+&lt;p&gt;If you like Spider-Man, play this game; you will enjoy it. If you like action games, play this game; you will enjoy it. If you like stories about relatable villains, play this game; you will enjoy it. If you check one or more of those boxes, play this game; you will love it.&lt;/p&gt;
+&lt;h1 id=&#34;masterpiece-97510&#34;&gt;Masterpiece: 9.75/10&lt;/h1&gt;
+&lt;h2 id=&#34;spider-man-vs-arkham-city&#34;&gt;Spider-Man vs. Arkham City&lt;/h2&gt;
+&lt;p&gt;Picking between arguably the two best superhero video games of all-time (and my two personal favorites) is quite difficult.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I like Spider-Man’s story better (not just a superhero tale - Spider-Man is humanized), but that might be recency bias. Aunt May’s death was more emotional than Joker’s; the player feels bad for Otto, but not for Joker.&lt;/li&gt;
+&lt;li&gt;Though this is reductive, combat is essentially the same in both games - which is to say that it is great in both games!&lt;/li&gt;
+&lt;li&gt;Traversal is fun in both games, but I&amp;rsquo;d rather web-sling trough NYC than glide through Gotham.&lt;/li&gt;
+&lt;li&gt;Spider-Man has suit customization. Although this doesn&amp;rsquo;t change the core elements of the game (e.g. story, side content, combat - with the exception of suit powers), it was a very fun addition.&lt;/li&gt;
+&lt;li&gt;There are no Miles/MJ level equivalents in Arkham City.&lt;/li&gt;
+&lt;li&gt;(Unfortunately, it has been too long since I&amp;rsquo;ve played Arkham City to compare boss battles and side content.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Overall, your preference could very well come down to which game you played first (the so-called &amp;ldquo;Zelda Effect&amp;rdquo;) or which hero you find more interesting.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title></title>
+      <title>Git 101</title>
+      <link>/project/git101/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/project/git101/</guid>
+      <description>&lt;h2 id=&#34;prelude-installing-gita-hrefnote1-idnote1refsup1supa&#34;&gt;Prelude: Installing Git&lt;a href=&#34;#note1&#34; id=&#34;note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Open Terminal and enter &lt;code&gt;git --version&lt;/code&gt; to see if you have Git installed. A message like &lt;code&gt;git version 2.20.1 (Apple Git-117)&lt;/code&gt; indicates that you are ready to use Git. If you don&amp;rsquo;t have Git installed, then an alert will appear displaying &lt;code&gt;The &amp;quot;git&amp;quot; command requires the command line developer tools. Would you like to install the tools now?&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;There are three options:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Click Install and get the Command Line Developer Tools. This hassle-free experience will give you the Apple version of Git.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install Xcode, which includes the Command Line Developer Tools.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click Cancel and get the latest version of Git 
+&lt;a href=&#34;https://git-scm.com/downloads&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;directly from the developers&lt;/a&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you already have Git installed, you can follow 
+&lt;a href=&#34;https://www.michaelcrump.net/step-by-step-how-to-update-git/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;these instructions&lt;/a&gt;
+ to update to the latest version.&lt;/p&gt;
+&lt;h2 id=&#34;git-on-your-local-machine&#34;&gt;Git on your Local Machine&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Creating a New Git Repository Using &lt;code&gt;git init&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: create a new directory named &lt;code&gt;GitTutorial&lt;/code&gt; and navigate inside it.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Once your present working directory is &lt;code&gt;GitTutorial/&lt;/code&gt;, simply type &lt;code&gt;git init&lt;/code&gt; to begin using Git for version control.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;git init&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Terminal will output  &lt;code&gt;Initialized empty Git repository in /path/GitTutorial/.git/&lt;/code&gt; where &lt;code&gt;path&lt;/code&gt; specifies the location of &lt;code&gt;GitTutorial/&lt;/code&gt;.  This empty Git repository is hidden; note the differnces of &lt;code&gt;ls&lt;/code&gt; and &lt;code&gt;ls -a&lt;/code&gt; in &lt;code&gt;GitTutorial/&lt;/code&gt;&lt;a href=&#34;#note2&#34; id=&#34;note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Saving Using &lt;code&gt;git add&lt;/code&gt; and &lt;code&gt;git commit&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The command &lt;code&gt;git add .&lt;/code&gt; tells Git to take a snapshot of the current status of the directory&lt;a href=&#34;#note3&#34; id=&#34;note3ref&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;git add .&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This snapshot is now stored in a temporary staging area which Git calls the &lt;em&gt;index&lt;/em&gt; and this process is called &lt;em&gt;staging&lt;/em&gt;. You can permanently store staged files with &lt;code&gt;git commit&lt;/code&gt;. One of the benefits to using Git is that you can tag each commit with a &lt;em&gt;message&lt;/em&gt;&lt;a href=&#34;#note4&#34; id=&#34;note4ref&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;. This should be something short and informative, e.g. &amp;ldquo;initial commit&amp;rdquo; or &amp;ldquo;adding June data&amp;rdquo;. &lt;code&gt;git commit&lt;/code&gt; on its own will prompt you to provide a message; alternatively, you can use &lt;code&gt;git commit -m &amp;quot;message&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Excercise: Commit your current directory to your local machine.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Making Changes to Your Git Repository&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Suppose you add new files/directories or make changes to existing files in your Git repository. These changes are not automically stored by Git; you must tell Git precisely what you want to add every time you want to make a commit. Git is very flexible in what it allows you to commit: you can choose to commit a single modified file, everything that has been modified, or anywhere in between.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git add file&lt;/code&gt; stages &lt;code&gt;file&lt;/code&gt; only.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add file1 file2&lt;/code&gt; stages &lt;code&gt;file1&lt;/code&gt; and &lt;code&gt;file2&lt;/code&gt;; this is extendable to any number of files. Alternatively, you could use &lt;code&gt;git add file1&lt;/code&gt; and &lt;code&gt;git add file2&lt;/code&gt; as separate commands.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add -A&lt;/code&gt; stages changes from ALL tracked and untracked files.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add .&lt;/code&gt; stages new and modified files but not deleted files&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add -u&lt;/code&gt; stages modified and deleted files but not new files&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit -a&lt;/code&gt; is equivalent to &lt;code&gt;git add -u&lt;/code&gt; and &lt;code&gt;git commit -m &amp;quot;message&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Remember that with the exception of the last command, you must commit your files before Git permanently saves the changes!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Create and modify some dummy files and play around with various &lt;code&gt;git add&lt;/code&gt; and &lt;code&gt;git commit&lt;/code&gt; commands to make changes to your repository.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Branches: Creating Diverging Workflows with &lt;code&gt;git branch&lt;/code&gt; and &lt;code&gt;git switch&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;One of the most useful features of Git is its ability to create &lt;em&gt;branches&lt;/em&gt;, new lines of development that can build on existing work without messing anything up &lt;a href=&#34;#note5&#34; id=&#34;note5ref&#34;&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;. For example, you might want to experiment in a sandbox environment before making a (more) permanant change to your repository, or you may want to create a separate workflow line for your personal contributions to a group project. Changes on one branch do not automatically show up on another branch.&lt;/p&gt;
+&lt;p&gt;The command &lt;code&gt;git branch branch_name&lt;/code&gt; creates a branch called &lt;code&gt;branch_name&lt;/code&gt;. &lt;code&gt;git branch&lt;/code&gt; without specifying &lt;code&gt;branch_name&lt;/code&gt; will list existing branches. The primary/original branch is named &lt;code&gt;master&lt;/code&gt; and the branch you are currently on is marked with an asterisk (&lt;code&gt;*&lt;/code&gt;). The command &lt;code&gt;git switch branch_name&lt;/code&gt; switches your repository to &lt;code&gt;branch_name&lt;/code&gt; as long as a branch with that name exists.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;git branch&lt;/code&gt;. Then create a new branch called &lt;code&gt;feature&lt;/code&gt;, use &lt;code&gt;git switch&lt;/code&gt; to switch to &lt;code&gt;feature&lt;/code&gt;, and type &lt;code&gt;git branch&lt;/code&gt; again.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: create a new file or modifiy an existing file and commit it on the &lt;code&gt;feature&lt;/code&gt; branch. Switch back to &lt;code&gt;master&lt;/code&gt; to verify that these changes are isolated to the &lt;code&gt;feature&lt;/code&gt; branch.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Integrating Separate Workflows with &lt;code&gt;git merge&lt;/code&gt;&lt;a href=&#34;#note6&#34; id=&#34;note6ref&#34;&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: make and commit a different change to the &lt;code&gt;master&lt;/code&gt; branch&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;At this point the two branches have diverged, with different changes made in each. Visually, the repository looks something like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;separate.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The command &lt;code&gt;git merge branch&lt;/code&gt; &lt;em&gt;merges&lt;/em&gt; the changes made on &lt;code&gt;branch&lt;/code&gt; to your current branch, typically &lt;code&gt;master&lt;/code&gt;. It is recommended that you confirm the receiving branch with &lt;code&gt;git branch&lt;/code&gt; before merging!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: merge &lt;code&gt;feature&lt;/code&gt; to &lt;code&gt;master&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In this simple scenario, merging should not have caused any issues, and the following image illustrates the new status of your repository &lt;a href=&#34;#note7&#34; id=&#34;note7ref&#34;&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;merged.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Merge conflicts&lt;/em&gt;, however, can prevent Git from merging two branches automatically. This can happen for a number of reasons, for example both branches have different changes made to the same line(s) of a particular file or one branch has made changes to a file that the other branch has deleted &lt;a href=&#34;#note8&#34; id=&#34;note8ref&#34;&gt;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;At this point, you could delete the &lt;code&gt;feature&lt;/code&gt; branch with &lt;code&gt;git branch -d feature&lt;/code&gt;. This command ensures that the changes in the &lt;code&gt;feature&lt;/code&gt; branch are already in the current branch. Conversely, if you develop on a branch &lt;code&gt;crazy-idea&lt;/code&gt;, but then regret it and want to delete all of the changes made on this branch, you can delete it with &lt;code&gt;git branch -D crazy-idea&lt;/code&gt;.&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;It is Easy to Git &lt;a href=&#34;#note9&#34; id=&#34;note9ref&#34;&gt;&lt;sup&gt;9&lt;/sup&gt;&lt;/a&gt; Lost: Fixing Confusion with &lt;code&gt;git status&lt;/code&gt; and &lt;code&gt;git diff&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If you have made a lot of changes to your repository or simply can&amp;rsquo;t remember what you have staged, the the command &lt;code&gt;git status&lt;/code&gt; can help to reorient yourself. According to the 
+&lt;a href=&#34;https://git-scm.com/docs/git-status&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt;
+,&lt;code&gt;git status&lt;/code&gt; displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git. The first are what you would commit by running &lt;code&gt;git commit&lt;/code&gt;; the second and third are what you could commit by running &lt;code&gt;git add&lt;/code&gt; before running &lt;code&gt;git commit&lt;/code&gt;. &lt;code&gt;git status&lt;/code&gt; also reminds you on what branch you are currently working.&lt;/p&gt;
+&lt;p&gt;It is also worth mentioning that &lt;code&gt;git diff&lt;/code&gt; can be used to show the changes made to modified files.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Excercise: Continue playing around with &lt;code&gt;git add&lt;/code&gt;, &lt;code&gt;git reset&lt;/code&gt;, and &lt;code&gt;git commit&lt;/code&gt; on dummy files, but this time also use &lt;code&gt;git diff&lt;/code&gt; and &lt;code&gt;git status&lt;/code&gt; to see how different actions change your repository.&lt;/em&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;Exploring History: &lt;code&gt;git log&lt;/code&gt;, &lt;code&gt;git checkout&lt;/code&gt;, and &lt;code&gt;git reflog&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The command &lt;code&gt;git log&lt;/code&gt; displays the history of your commits, with more recent commits at the top. Use the &lt;code&gt;arrow&lt;/code&gt; keys to scroll and press &lt;code&gt;q&lt;/code&gt; to exit.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Type &lt;code&gt;git log&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Observe that each commit lists the author, date, branch and commit message, as well as the associated 40-character checksum hash. This hash is one of the most powerful features of Git, as it enables you to switch to a different state of the repository. The command &lt;code&gt;git checkout hash&lt;/code&gt;, where &lt;code&gt;hash&lt;/code&gt; is the beginning (first 5-15 characters) of a particular commit, will change the contents of your repository from its current status to what it contained at that commit. This is best used when you merely want to look at the contents from this commit; see below if you want to make changes from this commit.&lt;/p&gt;
+&lt;p&gt;At this point, it is worthwhile to define &lt;code&gt;HEAD&lt;/code&gt;, a term which you may have already noticed. &lt;code&gt;HEAD&lt;/code&gt; is simply a reference to the current (most recent) commit on the current branch. If you are not on the latest commit - meaning that &lt;code&gt;HEAD&lt;/code&gt; is pointing to a prior commit in history - then it&amp;rsquo;s called &lt;code&gt;detached HEAD&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: use &lt;code&gt;git checkout&lt;/code&gt; to switch your repository to a previous commit.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The command &lt;code&gt;git reflog&lt;/code&gt; displays the history of changes which updated &lt;code&gt;HEAD&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;git reflog&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In addition to &lt;code&gt;git checkout&lt;/code&gt;, there are a few more ways to move around your repository&amp;rsquo;s commit history:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git checkout HEAD@{...}&lt;/code&gt; will move &lt;code&gt;HEAD&lt;/code&gt; to the commit {&amp;hellip;} as described by &lt;code&gt;git reflog&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout -&lt;/code&gt; switches &lt;code&gt;HEAD&lt;/code&gt; to its position before the previous &lt;code&gt;checkout&lt;/code&gt;&lt;a href=&#34;#note10&#34; id=&#34;note10ref&#34;&gt;&lt;sup&gt;10&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout branchname&lt;/code&gt; returns to the commit that is the head of &lt;code&gt;branchname&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Move around your commit history using &lt;code&gt;git log&lt;/code&gt;, &lt;code&gt;git reflog&lt;/code&gt;, and &lt;code&gt;git checkout&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Creating Branching Timelines&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now suppose that instead of merely viewing the contents of a past commit, you want to use that commit to begin a new branch. Git allows (at least) two ways to do this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git checkout&lt;/code&gt; to move to the desired commit followed by &lt;code&gt;git switch -c &amp;lt;new-branch-name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout -b &amp;lt;new branch&amp;gt; &amp;lt;commit_id&amp;gt;&lt;/code&gt; (this essentially combines the two distinct steps of the previous method into one)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Create a branch from &lt;code&gt;master&lt;/code&gt; at a past commit and commit some changes on this branch. Attempt to merge this branch with the most recent commit on &lt;code&gt;master&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;Undoing Commits and Changes: &lt;code&gt;git reset&lt;/code&gt; and &lt;code&gt;git revert&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Suppose you staged the wrong file to commit, or you staged the correct one prematurely. &lt;code&gt;git reset file&lt;/code&gt; will remove &lt;code&gt;file&lt;/code&gt; from the index. &lt;code&gt;git reset&lt;/code&gt; on its own will unstage all due changes.&lt;/p&gt;
+&lt;p&gt;Alternatively, suppose that you not only staged the wrong file(s), but you also commited the changes. &lt;code&gt;git revert HEAD&lt;/code&gt; tells Git to create a new commit which is an inverse of the previous commit: anything deleted in the most recent commit will be added, and anything added in the most recent commit will be deleted. This is ideal for published changes because it preserves the true history of the repository. &lt;code&gt;git revert&lt;/code&gt; can also be used to undo multiple commits, using either &lt;code&gt;git &amp;lt;hash-or-ref&amp;gt;&lt;/code&gt; to revert to a specific commit or &lt;code&gt;git revert HEAD~N&lt;/code&gt; where &lt;code&gt;N&lt;/code&gt; is the number of commits you wish to revert (e.g. &lt;code&gt;git revert HEAD~2&lt;/code&gt; reverts two commits).&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git revert&lt;/code&gt; does not delete the undesired commits; if this is your intention, &lt;code&gt;use git reset --hard &amp;lt;hash-or-ref&amp;gt;&lt;/code&gt; The &lt;code&gt;--hard&lt;/code&gt; option reverts everything back to the specified commit, including reference pointers, the staging index, and your working directory. Thus not only does this command revert to a previous commit, it also deletes all working changes. To avoid losing any working changes, you can use &lt;code&gt;stash&lt;/code&gt; to save your working changes before reseting and &lt;code&gt;stash pop&lt;/code&gt; to recover the changes after reseting.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git reset&lt;/code&gt; also has a &lt;code&gt;--soft&lt;/code&gt; option that works only affects the commit history, not your working directory or staging index. This is likely the best option if you have uncommited changes that you want to keep.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: play around with &lt;code&gt;git reset&lt;/code&gt; and &lt;code&gt;git revert&lt;/code&gt; to undo changes made to your repository.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;Move, Copy, Rename, and Delete: &lt;code&gt;git mv&lt;/code&gt;, &lt;code&gt;git cp&lt;/code&gt;, and &lt;code&gt;git rm&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Git has built-in commands to move, rename, copy, and delete files. &lt;code&gt;git mv&lt;/code&gt;, &lt;code&gt;git cp&lt;/code&gt;, and &lt;code&gt;git rm&lt;/code&gt; perform analagously to &lt;code&gt;mv&lt;/code&gt;, &lt;code&gt;cp&lt;/code&gt;, and &lt;code&gt;rm&lt;/code&gt;. The benefit of using these Git commands is that they automatically add the file to the index so that you only have to commit the changes.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: play around with &lt;code&gt;git mv&lt;/code&gt;, &lt;code&gt;git cp&lt;/code&gt;, and &lt;code&gt;git rm&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;Fully Deleting a Git Repository&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Finally, suppose that after a series of commits, branches, and merges, everything is up-to-date on and accurate on &lt;code&gt;master&lt;/code&gt; and you want to start fresh with a new Git repository. The command &lt;code&gt;rm -rf .git&lt;/code&gt; deletes the &lt;code&gt;.git/&lt;/code&gt; repository and leaves only the working diretory. &lt;code&gt;git init&lt;/code&gt; can be used on this clean directory to start a new workflow. As with any use of &lt;code&gt;rm&lt;/code&gt;, use with caution!&lt;/p&gt;
+&lt;h2 id=&#34;aditional-resources&#34;&gt;Aditional Resources&lt;/h2&gt;
+&lt;p&gt;If you want Git help directly in the terminal, type &lt;code&gt;man gittutorial&lt;/code&gt; or &lt;code&gt;man giteveryday&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you made a mistake and are unsure how to fix it, check out 
+&lt;a href=&#34;https://ohshitgit.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Oh Shit, Git!?&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;For a textbook writen by the authors of Git, see 
+&lt;a href=&#34;https://git-scm.com/book/en/v2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Pro Git&lt;/a&gt;
+.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note1&#34; href=&#34;#note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; For more information, visit 
+&lt;a href=&#34;https://www.macworld.co.uk/how-to/mac-software/how-use-git-github-on-your-mac-3639136/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Macworld&lt;/a&gt;
+.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note2&#34; href=&#34;#note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; Recall that hidden files/directories should not be modified unless you know what you are doing - the Git repository is hidden for a reason!&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note3&#34; href=&#34;#note3ref&#34;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; Recall that &lt;code&gt;.&lt;/code&gt; refers to your current directory.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note4&#34; href=&#34;#note4ref&#34;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; 
+&lt;a href=&#34;https://git-scm.com/docs/gittutorial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A note on commit messages&lt;/a&gt;
+: Though not required, it’s a good idea to begin the commit message with a single short (less than 50 character) line summarizing the change, followed by a blank line and then a more thorough description. The text up to the first blank line in a commit message is treated as the commit title, and that title is used throughout Git.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note5&#34; href=&#34;#note5ref&#34;&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; There is a lot that goes on beyond the scenes that makes Git&amp;rsquo;s handling of branches much more efficient than other version control methods.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note6&#34; href=&#34;#note6ref&#34;&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt; Images courtesy of 
+&lt;a href=&#34;https://www.atlassian.com/git/tutorials/using-branches/git-merge&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Atlassian&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note7&#34; href=&#34;#note7ref&#34;&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; The command &lt;code&gt;gitk&lt;/code&gt; shows a graphical representation of your specific history.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note8&#34; href=&#34;#note8ref&#34;&gt;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt; For more information on handling merge conflicts, visit 
+&lt;a href=&#34;https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this tutorial&lt;/a&gt;
+.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note9&#34; href=&#34;#note9ref&#34;&gt;&lt;sup&gt;9&lt;/sup&gt;&lt;/a&gt; Pun intended.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note10&#34; href=&#34;#note10ref&#34;&gt;&lt;sup&gt;10&lt;/sup&gt;&lt;/a&gt; Note the similarity to &lt;code&gt;cd -&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Terminal Commands 101</title>
       <link>/project/terminal101/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/project/terminal101/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;some-opening-remarks&#34;&gt;Some Opening Remarks&lt;/h2&gt;
+&lt;p&gt;Throughout this document, I will use font that looks like &lt;code&gt;this&lt;/code&gt; for terminal commands, keyboard prompts (e.g. press &lt;code&gt;spacebar&lt;/code&gt;), and text that you may see in the terminal window.&lt;/p&gt;
+&lt;p&gt;You should save the accompanying document &lt;a href=&#34;tutorial.txt&#34; download&gt;tutorial.txt&lt;/a&gt; to your desktop so that you can complete one of the exercises without added headache.&lt;/p&gt;
+&lt;h2 id=&#34;opening-and-using-terminal&#34;&gt;Opening and Using Terminal&lt;/h2&gt;
+&lt;p&gt;On Macs, the terminal is a pre-installed application that allows users to interact with their computer via command prompts. By default, it can be found in your Utilities folder. If you are not sure how to access it, conduct a spotlight search by pressing &lt;code&gt;Command-Spacebar&lt;/code&gt; and then typing &lt;code&gt;terminal&lt;/code&gt;. Opening terminal should yield a small window with a white background. You should have a cursor that allows you to type in this window. However, you cannot use this cursor to click; if you need to navigate the command line (e.g. to fix a typo), use your arrows.&lt;/p&gt;
+&lt;p&gt;Using terminal commands is simple: just type the appropriate (case-sensitive) syntax and then press &lt;code&gt;enter&lt;/code&gt;!&lt;/p&gt;
+&lt;h2 id=&#34;ten-basic-commands&#34;&gt;Ten Basic Commands&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Command 1: &lt;code&gt;pwd&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The command &lt;code&gt;pwd&lt;/code&gt; stands for &lt;em&gt;present working directory&lt;/em&gt; and typing it will return your current directory. (&amp;ldquo;Directory&amp;rdquo; and &amp;ldquo;folder&amp;rdquo; are mostly interchangeable terms.)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;pwd&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Since you just opened terminal, the directory that is returned is known as your &lt;em&gt;home directory&lt;/em&gt;. Your home directory is analogous to a base of operations: it holds all of your personal files, programs, and directories. By default, the name of your home directory is identical to the name your username; my home directory is &lt;code&gt;/Users/LoganArnold2&lt;/code&gt;. Additionally, the tilde (&lt;code&gt;~&lt;/code&gt;) is a shorthand that refers to your home directory.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;path&lt;/em&gt; is a description of a file&amp;rsquo;s location. For example, &lt;code&gt;/Users/LoganArnold2/README&lt;/code&gt; (equivalently, &lt;code&gt;~/README&lt;/code&gt;) is a path to a file called &lt;code&gt;README&lt;/code&gt; contained within my home directory. Notice that forward slashes (&lt;code&gt;/&lt;/code&gt;) separate components of a path.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 2: &lt;code&gt;ls&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The command &lt;code&gt;ls&lt;/code&gt; will &lt;em&gt;list&lt;/em&gt; the contents of your present working directory.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;ls&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You probably have folders named &lt;code&gt;Applications/&lt;/code&gt;, &lt;code&gt;Desktop/&lt;/code&gt;, and &lt;code&gt;Downloads/&lt;/code&gt;, among other folders and maybe even some files or programs located in your home directory. Notice, too, that these directories are displayed with a &lt;code&gt;/&lt;/code&gt; at the end of their name; the ending &lt;code&gt;/&lt;/code&gt; differentiates between files and directories.&lt;/p&gt;
+&lt;p&gt;It is worth mentioning that &lt;code&gt;ls&lt;/code&gt; does not, in fact, list all of the files in your present working directory, but only those ones that do not begin with a dot (&lt;code&gt;.&lt;/code&gt;). Files beginning with &lt;code&gt;.&lt;/code&gt; are known as &lt;em&gt;hidden files&lt;/em&gt; and usually contain important program configuration information. They are hidden because you should not change them unless you are very familiar with Unix!&lt;/p&gt;
+&lt;p&gt;To list all files in your home directory, including those whose names begin with &lt;code&gt;.&lt;/code&gt;, type &lt;code&gt;ls -a&lt;/code&gt;. The &lt;code&gt;-a&lt;/code&gt; after &lt;code&gt;ls&lt;/code&gt; is an example of a &lt;em&gt;flag&lt;/em&gt; and can be thought of as an argument or option for the command &lt;code&gt;ls&lt;/code&gt; that changes the behavior of the command. (Most command line arguments have a plethora of flags, but this tutorial will only scratch the surface of this topic.)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;ls -a&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 3: &lt;code&gt;cd&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Moving around directories is simple. The command &lt;code&gt;cd&lt;/code&gt; stands for &lt;em&gt;change directory&lt;/em&gt; and combining &lt;code&gt;cd&lt;/code&gt; with a directory named &lt;code&gt;dir&lt;/code&gt; will change your present working directory to &lt;code&gt;dir&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;cd Desktop/&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Your present working directory should now be your Desktop. Feel free to verify this using either &lt;code&gt;pwd&lt;/code&gt; or &lt;code&gt;ls&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Unix has some shortcuts that are quite useful, especially when changing directories.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;When typing the name of a directory or file within your present working directory, pressing &lt;code&gt;tab&lt;/code&gt; will auto-complete as much as possible. For example, in the previous exercise, typing &lt;code&gt;cd Desk&lt;/code&gt; followed by &lt;code&gt;tab&lt;/code&gt; would likely auto-complete to the desired &lt;code&gt;cd Desktop/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A single dot, &lt;code&gt;.&lt;/code&gt;, refers to the current directory. Thus, typing &lt;code&gt;cd .&lt;/code&gt; essentially does nothing because you are changing your directory to your current directory. This may not seem useful at first, but it can save a lot of typing in more advanced settings.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Two dots, &lt;code&gt;..&lt;/code&gt;, refers to the &lt;em&gt;parent directory&lt;/em&gt;, the directory in which your current directory is located.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lastly, it is worth mentioning that &lt;code&gt;cd&lt;/code&gt; on its own (i.e. without specifying &lt;code&gt;dir&lt;/code&gt;) will change the present working directory to the home directory. This can be helpful if you are lost within a hierarchy of sub-directories!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Navigate to your home directory, then back to the Desktop - twice. You should be able to navigate from the Desktop to your home directory using (at least) two distinct commands!&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 4: &lt;code&gt;mkdir&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So far, all of the directories you have seen and navigated through have been ones that were on your computer previously. Often, you might be interested in creating a new directory. The command &lt;code&gt;mkdir&lt;/code&gt;, short for &lt;em&gt;make directory&lt;/em&gt; followed by &lt;code&gt;dir&lt;/code&gt; will create a new directory named &lt;code&gt;dir&lt;/code&gt; (assuming a directory with this name did not exist previously).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;mkdir TerminalTutorial&lt;/code&gt; and change your working directory to &lt;code&gt;TerminalTutorial/&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 5: &lt;code&gt;cp&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The &lt;code&gt;TerminalTutorial&lt;/code&gt; directory is currently empty (verify with &lt;code&gt;ls&lt;/code&gt;). The command &lt;code&gt;cp&lt;/code&gt; is used to copy a file from one location to another. Specifically, &lt;code&gt;cp file dir&lt;/code&gt; copies &lt;code&gt;file&lt;/code&gt; to &lt;code&gt;dir&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;cp ../tutorial.txt .&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This command copied the accompanying &lt;code&gt;tutorial.txt&lt;/code&gt; document into your present working directory by specifying the &lt;em&gt;relative path&lt;/em&gt; from your present working directory to the file &lt;code&gt;tutorial.txt&lt;/code&gt;. (Recall that &lt;code&gt;..&lt;/code&gt; refers to the parent directory, in this case &lt;code&gt;Desktop/&lt;/code&gt;, and &lt;code&gt;.&lt;/code&gt; refers to the current directory.) Since &lt;code&gt;cp&lt;/code&gt; copies files, you still have a version saved on the desktop.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cp&lt;/code&gt; can also be used to copy the contents of an existing file to a new file; this can be useful if you want to create a backup of a particular file or if you want to make changes to a file while keeping a copy of the original. The syntax to accomplish this is &lt;code&gt;cp file1 file2&lt;/code&gt; where &lt;code&gt;file1&lt;/code&gt; and &lt;code&gt;file2&lt;/code&gt; are the names of the original and new files, respectively.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;cp tutorial.txt tutorial.backup.txt&lt;/code&gt; followed by &lt;code&gt;ls&lt;/code&gt; to verify that you created a copy&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 6: &lt;code&gt;mv&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Sometimes you may prefer to move or rename a file rather than create a copy. &lt;code&gt;mv&lt;/code&gt; is used analogously to &lt;code&gt;cp&lt;/code&gt; but it &lt;em&gt;moves&lt;/em&gt; the contents of a file rather than copying them. Thus, &lt;code&gt;mv file dir&lt;/code&gt; moves &lt;code&gt;file&lt;/code&gt; to &lt;code&gt;dir&lt;/code&gt;, while &lt;code&gt;mv file1 file2&lt;/code&gt; renames &lt;code&gt;file1&lt;/code&gt; to &lt;code&gt;file2&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Use &lt;code&gt;mkdir&lt;/code&gt; to make a directory called &lt;code&gt;backups&lt;/code&gt; and then type &lt;code&gt;mv tutorial.backup.txt backups&lt;/code&gt;. Use &lt;code&gt;ls&lt;/code&gt;, then change directories to &lt;code&gt;backups/&lt;/code&gt; and use &lt;code&gt;ls&lt;/code&gt; again to verify that &lt;code&gt;tutorial.backup.txt&lt;/code&gt; has moved.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Use &lt;code&gt;mv tutorial.backup.txt tutorial.txt&lt;/code&gt; to revert the name of the file to its original&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 7: &lt;code&gt;cat&lt;/code&gt;, &lt;code&gt;head&lt;/code&gt;, and &lt;code&gt;tail&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Terminal has some built-in text editors (e.g. &lt;code&gt;nano&lt;/code&gt; and &lt;code&gt;vim&lt;/code&gt;) that may be of interest to you as a &amp;ldquo;next step&amp;rdquo; after completing this tutorial. (Alternatively, it is possible to open some other popular text editors in terminal, such as &lt;code&gt;Atom&lt;/code&gt;.&lt;a href=&#34;#note1&#34; id=&#34;note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;.For simplicity, however, suppose you are not interested in editing a document but rather merely want to read its contents. This is precisely the purpose of &lt;code&gt;cat&lt;/code&gt;, short for &lt;em&gt;concatenate&lt;/em&gt;: &lt;code&gt;cat file&lt;/code&gt; displays the contents of &lt;code&gt;file&lt;/code&gt; in the terminal.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;cat tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;While &lt;code&gt;cat file&lt;/code&gt; displays the entirety of &lt;code&gt;file&lt;/code&gt;, sometimes it is more convenient to look at only the beginning or end of &lt;code&gt;file&lt;/code&gt;; this can be done by the appropriately named commands &lt;code&gt;head&lt;/code&gt; and &lt;code&gt;tail&lt;/code&gt;, respectively. By default, each of these commands displays the first (or last) 10 lines of &lt;code&gt;file&lt;/code&gt;. The flag &lt;code&gt;-n&lt;/code&gt; followed by a number will display the first (or last) number of lines of &lt;code&gt;file&lt;/code&gt;. (Thus &lt;code&gt;head file&lt;/code&gt; and &lt;code&gt;head -n 10 file&lt;/code&gt; produce identical results.)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;head tutorial.txt&lt;/code&gt; and &lt;code&gt;tail tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: use &lt;code&gt;head&lt;/code&gt; and &lt;code&gt;tail&lt;/code&gt; along with &lt;code&gt;-n&lt;/code&gt; to display the first and last line of &lt;code&gt;tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is worth noting that &lt;code&gt;cat&lt;/code&gt;, &lt;code&gt;head&lt;/code&gt;, and &lt;code&gt;tail&lt;/code&gt; are simple commands that will not yield useful results when used on many file formats, e.g. &lt;code&gt;.pdf&lt;/code&gt;.&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 8: &lt;code&gt;grep&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The command &lt;code&gt;cat&lt;/code&gt; can quickly fill the terminal with text if you use it on a large file. Instead of reading through an entire file, suppose you are instead interested in only a subset of it, but that the subset is not merely the beginning or ending of the file. For instance, &lt;code&gt;tutorial.txt&lt;/code&gt; contains a few lines of sample data that mimic a data file that you may come across in your research. Perhaps you are only interested in the values from the month of January. The command &lt;code&gt;grep&lt;/code&gt; can be used to search text files. &lt;code&gt;grep expression file&lt;/code&gt; searches &lt;code&gt;file&lt;/code&gt; for &lt;code&gt;expression&lt;/code&gt; and displays the contents of all of the lines in &lt;code&gt;file&lt;/code&gt; that contain &lt;code&gt;expression&lt;/code&gt;. (&lt;code&gt;grep&lt;/code&gt; is short for &lt;em&gt;globally search a regular expression&lt;a id=&#34;note2&#34; href=&#34;#note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; and print&lt;/em&gt;.) Note that by default &lt;code&gt;grep&lt;/code&gt; is case-sensitive; the flag &lt;code&gt;-i&lt;/code&gt; performs case insensitive matching.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;grep Jan tutorial.txt&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; can also be used to search for phrases; use single or double quotes (&lt;code&gt;&#39;&lt;/code&gt; or &lt;code&gt;&amp;quot;&lt;/code&gt;) to enclose the phrase.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;grep Hello tutorial.txt&lt;/code&gt; and &lt;code&gt;grep &#39;Hello, world.&#39; tutorial.txt&lt;/code&gt; and compare the results&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Finally, you may want to search for multiple expressions at the same time. There are two options to do this: &lt;code&gt;grep -e expression1 -e expression 2 file&lt;/code&gt; and &lt;code&gt;egrep &#39;expression1|expression2 file&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Search &lt;code&gt;tutorial.txt&lt;/code&gt; for both &lt;code&gt;Oct&lt;/code&gt; and &lt;code&gt;Nov&lt;/code&gt; at the same time.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 9: &lt;code&gt;rm&lt;/code&gt; and &lt;code&gt;rmdir&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Deleting files and directories is both useful and simple. &lt;code&gt;rm file&lt;/code&gt; and &lt;code&gt;rmdir dir&lt;/code&gt; deletes a file named &lt;code&gt;file&lt;/code&gt; or a directory named &lt;code&gt;dir&lt;/code&gt;, respectively. Use these commands with caution, however! It can be difficult or impossible to recover items deleted via these commands.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;rm tutorial.txt&lt;/code&gt; then &lt;code&gt;ls&lt;/code&gt; to verify that &lt;code&gt;tutorial.txt&lt;/code&gt; has been deleted&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Change directories to the parent directory, &lt;code&gt;TerminalTutorial/&lt;/code&gt;, and then type &lt;code&gt;rmdir backups&lt;/code&gt; to delete the directory of backups. Again, use &lt;code&gt;ls&lt;/code&gt; to verify that the directory has been deleted.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Command 10: &lt;code&gt;man&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This tutorial has just scratched the surface of what can be done using terminal commands. If you forget what a particular command does, want to learn more about the flags that can be used for the command, or come across a new command altogether, the terminal offers a robust description of each command. &lt;code&gt;man command&lt;/code&gt; opens up the &lt;em&gt;manual&lt;/em&gt; for &lt;code&gt;command&lt;/code&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Use &lt;code&gt;man&lt;/code&gt; to read more about one or more of the commands covered in this tutorial. Type &lt;code&gt;q&lt;/code&gt; to exit the manual when finished.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: Use &lt;code&gt;man&lt;/code&gt; to learn about a command not covered in this tutorial, such as &lt;code&gt;diff&lt;/code&gt;, &lt;code&gt;sed&lt;/code&gt;, or &lt;code&gt;gzip&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;a-bonus-command-clear&#34;&gt;A Bonus Command: &lt;code&gt;clear&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;By now, your terminal is likely filled with text. Although opening a new terminal window is an easy way to obtain a clean slate, your working directory in that new window will initially be your home directory. If you are buried in a hierarchy of sub-directories, it more convenient to use the command &lt;code&gt;clear&lt;/code&gt; to remove the text in the terminal while maintaining your working directory.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Exercise: type &lt;code&gt;clear&lt;/code&gt; to clean your terminal window, then &lt;code&gt;pwd&lt;/code&gt; to verify that your current directory is &lt;code&gt;TerminalTutorial/&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a id=&#34;note1&#34; href=&#34;#note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Go 
+&lt;a href=&#34;http://tutorials.jumpstartlab.com/academy/workshops/terminal_and_editor.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+ for a short tutorial.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note2&#34; href=&#34;#note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; You may wish to Google regular expressions to learn some more tools that enhance the functionality of &lt;code&gt;grep&lt;/code&gt; and other command line arguments.]&lt;/p&gt;
+</description>
     </item>
     
   </channel>

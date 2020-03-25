@@ -5,12 +5,36 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Tags</title>
       <link>/tags/</link>
     </image>
+    
+    <item>
+      <title>Mathematical Modeling</title>
+      <link>/tags/mathematical-modeling/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/mathematical-modeling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Video Game Review</title>
+      <link>/tags/video-game-review/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/video-game-review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming Tutorial</title>
+      <link>/tags/programming-tutorial/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/programming-tutorial/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Source Themes</title>

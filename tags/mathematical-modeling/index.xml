@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathematical Modeling | Home</title>
+    <link>/tags/mathematical-modeling/</link>
+      <atom:link href="/tags/mathematical-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mathematical Modeling</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Mathematical Modeling</title>
+      <link>/tags/mathematical-modeling/</link>
+    </image>
+    
+    <item>
+      <title>Compartment Models in Epidemiology Part 1</title>
+      <link>/project/sir_model/</link>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/project/sir_model/</guid>
+      <description>&lt;p&gt;This post is an introduction to the basic models of disease spread, a topic that has entered the vernacular in recent weeks due to the COVID-19 pandemic. The focus will be the Susceptible-Infected-Recovery compartmental model.&lt;/p&gt;
+&lt;h2 id=&#34;compartment-models&#34;&gt;Compartment Models&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Compartment models&lt;/em&gt; are a broad class of mathematical models used to describe how components of a system move around from one sub-section to another sub-section within the larger system. Sometimes, such models are called &amp;ldquo;bathtub models,&amp;rdquo; as the underlying math describes the &amp;ldquo;flow&amp;rdquo; (i.e. of water) from a source (the faucet) to a sink (the drain). Sometimes, the flow is one-way, meaning that the component cannot return to the source once it has left; other times, the flow is bi-directional, and a component can return to its source. Compartment models have many applications, including ecology, economics, and, notably, epidemiology.&lt;/p&gt;
+&lt;h2 id=&#34;sir-model&#34;&gt;SIR Model&lt;/h2&gt;
+&lt;p&gt;The most elementary compartmental model in epidemiology is the &lt;em&gt;Susceptible-Infected-Recovery Model&lt;/em&gt;, commonly called the &lt;em&gt;SIR Model&lt;/em&gt;. The entire population is divided into three groups:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;People who have not had a disease and therefore are &lt;em&gt;susceptible&lt;/em&gt; (S)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;People who currently have the disease and therefore are &lt;em&gt;infected&lt;/em&gt; (I)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;People who have &lt;em&gt;recovered&lt;/em&gt; (R) from the disease&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This can be represented by the following basic graphic.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;SIR.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Notice that this model assumes that the population is constant (i.e. no births or deaths) and that, once recovered, an individual cannot become infected again. If we let &lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=\inline&amp;space;\beta&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?\inline&amp;space;\beta&#34; title=&#34;\beta&#34; /&gt;&lt;/a&gt;describe infection rate and &lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=\inline&amp;space;\gamma&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?\inline&amp;space;\gamma&#34; title=&#34;\gamma&#34; /&gt;&lt;/a&gt; describe recovery rate, then we have the following system of ordinary differential equations:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=\frac{dS}{dt}&amp;space;=&amp;space;-\beta&amp;space;IS,&amp;space;\frac{dI}{dt}&amp;space;=&amp;space;\beta&amp;space;IS&amp;space;-&amp;space;\gamma&amp;space;R,&amp;space;\frac{dR}{dt}&amp;space;=&amp;space;\gamma&amp;space;R&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?\frac{dS}{dt}&amp;space;=&amp;space;-\beta&amp;space;IS,&amp;space;\frac{dI}{dt}&amp;space;=&amp;space;\beta&amp;space;IS&amp;space;-&amp;space;\gamma&amp;space;R,&amp;space;\frac{dR}{dt}&amp;space;=&amp;space;\gamma&amp;space;R&#34; title=&#34;\frac{dS}{dt} = -\beta IS, \frac{dI}{dt} = \beta IS - \gamma R, \frac{dR}{dt} = \gamma R&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Observing that the sum of the three derivatives is zero proves that the SIR Model assumes the total population is constant.&lt;/p&gt;
+&lt;p&gt;The so-called &lt;em&gt;basic reproduction number&lt;/em&gt; has also entered everyday conversation: it describes the expected number of new infections from a single infection in a population where all subjects are susceptible. In the SIR Model, it is given by the ratio of the rate of infection over the rate of recovery:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=R_0&amp;space;=&amp;space;\frac{\beta}{\gamma}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?R_0&amp;space;=&amp;space;\frac{\beta}{\gamma}&#34; title=&#34;R_0 = \frac{\beta}{\gamma}&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rewriting the rate of change of infected individuals illustrates the importance of the basic reproductive number:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=\frac{dI}{dt}&amp;space;=&amp;space;(R_0S&amp;space;-&amp;space;1)\gamma&amp;space;I&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?\frac{dI}{dt}&amp;space;=&amp;space;(R_0S&amp;space;-&amp;space;1)\gamma&amp;space;I&#34; title=&#34;\frac{dI}{dt} = (R_0S - 1)\gamma I&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thus&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=R_0&amp;space;&gt;&amp;space;\frac{1}{S(0)}&amp;space;\Rightarrow&amp;space;\frac{dI}{dt}(0)&amp;space;&gt;&amp;space;0&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?R_0&amp;space;&gt;&amp;space;\frac{1}{S(0)}&amp;space;\Rightarrow&amp;space;\frac{dI}{dt}(0)&amp;space;&gt;&amp;space;0&#34; title=&#34;R_0 &gt; \frac{1}{S(0)} \Rightarrow \frac{dI}{dt}(0) &gt; 0&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;causing an &lt;em&gt;epidemic&lt;/em&gt; in which the percentage of infected individuals can become quite large.&lt;/p&gt;
+&lt;h2 id=&#34;simulation&#34;&gt;Simulation&lt;/h2&gt;
+&lt;p&gt;See my 
+&lt;a href=&#34;https://larnold1997.shinyapps.io/sirmodel/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Shiny app&lt;/a&gt;
+ to view a graph of the fraction of individuals in the S, I, and R compartments over time, and how this graph changes as different parameters change. (This app assumes that everyone who is not infected initially is susceptible.)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
