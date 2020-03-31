@@ -523,10 +523,30 @@
 <p>Thus</p>
 <p><a href="https://www.codecogs.com/eqnedit.php?latex=R_0&space;>&space;\frac{1}{S(0)}&space;\Rightarrow&space;\frac{dI}{dt}(0)&space;>&space;0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_0&space;>&space;\frac{1}{S(0)}&space;\Rightarrow&space;\frac{dI}{dt}(0)&space;>&space;0" title="R_0 > \frac{1}{S(0)} \Rightarrow \frac{dI}{dt}(0) > 0" /></a></p>
 <p>causing an <em>epidemic</em> in which the percentage of infected individuals can become quite large.</p>
+<h2 id="assumptions">Assumptions</h2>
+<p>All mathematical models make assumptions in their attempt to simplify the complicated real world. We have already noted that the SIR Model assumes that the total population is constant. It is important to outline the other assumptions present in the model so that we know how it might fail and what improvements can be made as we add complexity. The other main assumptions present in the basic SIR Model are:</p>
+<ul>
+<li>
+<p>No prior immunity; in other words, everyone has the potential to get sick.</p>
+</li>
+<li>
+<p>All individuals are similar (susceptibility and infectivity). Thus a healthy young adult is as likely to both become infected and to recover as an elderly person with pre-existing health problems.</p>
+</li>
+<li>
+<p>All individuals mix uniformly (equivalently, the mixture is homogeneous). This is &ldquo;math-speak&rdquo; that simply means one person is equally likely to come into contact with every other person in the population.</p>
+</li>
+<li>
+<p>All recovered individuals are immune; i.e., there is no possibility of re-infection.</p>
+</li>
+<li>
+<p>No behavioral changes during the course of the epidemic!</p>
+</li>
+</ul>
+<p>Clearly, the SIR Model should not be used in any real-world decision-making process. Nevertheless, the dynamics that it describes serves as the basis for many epidemiological models that <em>are</em> (and should!) be used to inform policy decisions.</p>
 <h2 id="simulation">Simulation</h2>
 <p>See my 
 <a href="https://larnold1997.shinyapps.io/sirmodel/" target="_blank" rel="noopener">Shiny app</a>
- to view a graph of the fraction of individuals in the S, I, and R compartments over time, and how this graph changes as different parameters change. (This app assumes that everyone who is not infected initially is susceptible.)</p>
+ to view a graph of the fraction of individuals in the S, I, and R compartments over time, and how this graph changes as different parameters change. (This app assumes that everyone who is not infected initially is susceptible - in other words, there is no prior immunity, as described above.)</p>
 
     </div>
 
