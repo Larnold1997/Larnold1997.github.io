@@ -53,6 +53,16 @@
   </url>
   
   <url>
+    <loc>/project/luckandprobability/</loc>
+    <lastmod>2020-03-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/statistics-tutorial/</loc>
+    <lastmod>2020-03-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/project/sir_model/</loc>
     <lastmod>2020-03-25T00:00:00+00:00</lastmod>
   </url>
@@ -225,11 +235,6 @@
   <url>
     <loc>/publication/conference-paper/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/luckandprobability/</loc>
-    <priority>0</priority>
   </url>
   
   <url>

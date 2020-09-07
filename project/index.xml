@@ -44,6 +44,56 @@
     </item>
     
     <item>
+      <title>How Lucky am I (Statistically)?</title>
+      <link>/project/luckandprobability/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/project/luckandprobability/</guid>
+      <description>&lt;h2 id=&#34;bernoulli-distribution&#34;&gt;Bernoulli Distribution&lt;/h2&gt;
+&lt;p&gt;Coin flipping - throwing a coin into the air and checking whether heads or tails is displayed when it lands - is one of the most elementary science experiments. Even children understand that the two potential outcomes are random. In statistics, modeling this binary (i.e. yes/no) outcome is done with a &lt;em&gt;Bernoulli distribution&lt;/em&gt;. The 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Bernoulli_distribution&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bernoulli distribution&lt;/a&gt;
+ is a discrete probability distribution, meaning it can only take distinct values. Specifically, we may assign &amp;ldquo;heads&amp;rdquo; to the number &amp;ldquo;1&amp;rdquo; and &amp;ldquo;tails&amp;rdquo; to the number &amp;ldquo;0&amp;rdquo;. (Nothing is preventing us from choosing the opposite assignment.) Often, statisticians choose to use &amp;ldquo;1&amp;rdquo; to represent &amp;ldquo;yes&amp;rdquo; or &amp;ldquo;success&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Formally, the Bernoulli distribution describes a random variable that takes the value 1 with probability &lt;em&gt;p&lt;/em&gt; and the value &lt;em&gt;0&lt;/em&gt; with the probability &lt;em&gt;q = 1 - p&lt;/em&gt;. In the coin tossing example (assuming a &amp;ldquo;fair&amp;rdquo; coin), &lt;em&gt;p = q = 1/2&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;binomial-distribution&#34;&gt;Binomial Distribution&lt;/h2&gt;
+&lt;p&gt;You may be asking yourself: so what? It is obvious that a coin flip can yield heads or tails with equal probability. Is this formalization necessary?&lt;/p&gt;
+&lt;p&gt;The benefit to approaching coin flipping (and any other binary outcome) in the lens of a Bernoulli distribution is that the Bernoulli distribtuion is a special example of the &lt;em&gt;binomial distribution&lt;/em&gt;. The 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Binomial_distribution&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;binomial distribution&lt;/a&gt;
+ describes the probability of obtaining &lt;em&gt;k&lt;/em&gt; successes out of &lt;em&gt;n&lt;/em&gt; Bernoulli trials when the probability of success is &lt;em&gt;p&lt;/em&gt;, assuming each trial is &lt;em&gt;independent&lt;/em&gt; (i.e. the outcome of one trial does not influence the outcome of the next trial). This probability can be calculated using the probability mass function (PMF) of the binomial distribution:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=f(k,n,p)=\Pr(k;n,p)=\Pr(X=k)={\binom&amp;space;{n}{k}}p^{k}(1-p)^{n-k}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?f(k,n,p)=\Pr(k;n,p)=\Pr(X=k)={\binom&amp;space;{n}{k}}p^{k}(1-p)^{n-k}&#34; title=&#34;f(k,n,p)=\Pr(k;n,p)=\Pr(X=k)={\binom {n}{k}}p^{k}(1-p)^{n-k}&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;for &lt;em&gt;k = 0, 1, 2, &amp;hellip;, n,&lt;/em&gt; where&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex={\binom&amp;space;{n}{k}}={\frac&amp;space;{n!}{k!(n-k)!}}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?{\binom&amp;space;{n}{k}}={\frac&amp;space;{n!}{k!(n-k)!}}&#34; title=&#34;{\binom {n}{k}}={\frac {n!}{k!(n-k)!}}&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;is the &lt;em&gt;binomial coefficient&lt;/em&gt; (hence why the distribution is called the binomial distribution). This is much more interesting than simply asking what the probability of success and failure of the next trial is!&lt;/p&gt;
+&lt;p&gt;Though the PMF can seem complicated at first, the interpretation is relatively straightforward when it is broken into its constituent parts. First, &lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=p^k&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?p^k&#34; title=&#34;p^k&#34; /&gt;&lt;/a&gt; represents the probability of succeeding &lt;em&gt;k&lt;/em&gt; times when each success has probability &lt;em&gt;p&lt;/em&gt;. If there are &lt;em&gt;k&lt;/em&gt; successes in &lt;em&gt;n&lt;/em&gt; trials, then there are &lt;em&gt;n - k&lt;/em&gt; failures. Therefore, &lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=(1-p)^{n-k}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?(1-p)^{n-k}&#34; title=&#34;(1-p)^{n-k}&#34; /&gt;&lt;/a&gt; is the probability of failing &lt;em&gt;n - k&lt;/em&gt; times. Since each trial is independent, we can simply multiply these two probabilities together. Finally, the binomial coefficient at the beginning of the formula captures the fact that there are (almost always) many different ways to obtain &lt;em&gt;k&lt;/em&gt; successes; for instance, they may all be at the beginning, all at the end, or anywhere in between.&lt;/p&gt;
+&lt;p&gt;Below is a graph of the binomial distribution&amp;rsquo;s PMF of a fair coin for &lt;em&gt;n = 20&lt;/em&gt; trials.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;Fig1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Unsurpisingly, the PMF is maximized when &lt;em&gt;n = 10&lt;/em&gt;: When the probability of success is equal to the probability of failure, the most likely result is an equal number of successes and failures. The beauty of the binomial distribution is that it allows us to figure out what the most likely outcome is when the outcome of the experiment is biased toward either success or failure. Indeed, the mean of a binomial distrubtion is always given by the product &lt;em&gt;np&lt;/em&gt;.  Moving away from the peak, the PMF decays symetrically; this is expected due to the fact that &lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=\binom{n}{k}&amp;space;=&amp;space;\binom{n}{n-k}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?\binom{n}{k}&amp;space;=&amp;space;\binom{n}{n-k}&#34; title=&#34;\binom{n}{k} = \binom{n}{n-k}&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Check out my 
+&lt;a href=&#34;https://larnold1997.shinyapps.io/binomialpmf/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Shiny app&lt;/a&gt;
+ to see how the binomial PMF changes for different values of &lt;em&gt;p&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;geometric-distribution&#34;&gt;Geometric Distribution&lt;/h2&gt;
+&lt;p&gt;To summarize the above section, the binomial distribution lets us calculate the probability of observing &lt;em&gt;k&lt;/em&gt; successes when a Bernoulli trial (i.e. a binary outcome) is observed &lt;em&gt;n&lt;/em&gt; times with a probability &lt;em&gt;p&lt;/em&gt; of success.&lt;/p&gt;
+&lt;p&gt;Suppose instead that the experiment stops when it succeeds. To continue the coin flipping example, we will flip the coin until it lands heads up. This may take 1, 2, 5, 10, 100, or more trials. In general, what is the probability that this experiment will require &lt;em&gt;k&lt;/em&gt; trials? The &lt;em&gt;geometric distribution&lt;/em&gt; can be used to answer this question. Formally, the 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Geometric_distribution&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;geometric distribution&lt;/a&gt;
+ gives the probability that the first occurence of a success of &lt;em&gt;k&lt;/em&gt; independent Bernoulli trials, each with probability of success &lt;em&gt;p&lt;/em&gt;. The PMF of the geometric distribution is&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex={\displaystyle&amp;space;\Pr(X=k)=(1-p)^{k-1}p}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?{\displaystyle&amp;space;\Pr(X=k)=(1-p)^{k-1}p}&#34; title=&#34;{\displaystyle \Pr(X=k)=(1-p)^{k-1}p}&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;for &lt;em&gt;k = 1, 2, 3&amp;hellip;&lt;/em&gt;. The interpretation of this formula is similar to the PMF of the binomial distribution above: If the first success is on trial &lt;em&gt;k&lt;/em&gt;, then the first &lt;em&gt;k - 1&lt;/em&gt; trials are failures, with probability of failure given by &lt;em&gt;1 - p&lt;/em&gt;; by independence, we have the term&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=(1-p)^{k-1}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?(1-p)^{k-1}&#34; title=&#34;(1-p)^{k-1}&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then, on trial &lt;em&gt;k&lt;/em&gt;, the streak of failures is broken. No matter how large the streak, the probability that the next outcome is a success is always &lt;em&gt;p&lt;/em&gt;.&lt;a href=&#34;#note1&#34; id=&#34;note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Again, by independence, we include&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=p&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?p&#34; title=&#34;p&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;at the end of the product.&lt;/p&gt;
+&lt;p&gt;The name of the distrubtion stems from the fact that the sequence of probabilities is geometric; that is, each term after the first is found by multiplying the previous one by a fixed, non-zero number called the &lt;em&gt;common ratio&lt;/em&gt;. In the case of the geometric distribution, the common ratio is &lt;em&gt;1 - p&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The introduction of the geometric distribution was motivated by the question: what is the probability that I will need &lt;em&gt;k&lt;/em&gt; trials until I obtain the first success in a binary experiment (e.g. a coin flip)? A related question is this: Suppose I run &lt;em&gt;k&lt;/em&gt; trials of the experiment. What is the probability that I have &lt;em&gt;at least one&lt;/em&gt; success? This is given by the cumulative distribution function (CDF) of the geometric distribution:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=Pr(X&amp;space;\leq&amp;space;k)&amp;space;=&amp;space;1&amp;space;-&amp;space;(1-p)^{k}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?Pr(X&amp;space;\leq&amp;space;k)&amp;space;=&amp;space;1&amp;space;-&amp;space;(1-p)^{k}&#34; title=&#34;Pr(X \leq k) = 1 - (1-p)^{k}&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hopefully the interpretation of this formula is straightforward by now. In &lt;em&gt;k&lt;/em&gt; trials, the probability of them all being a failure is&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.codecogs.com/eqnedit.php?latex=(1-p)^{k}&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://latex.codecogs.com/gif.latex?(1-p)^{k}&#34; title=&#34;(1-p)^{k}&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;complement&lt;/em&gt; of this probability corresponds to &lt;em&gt;anything else&lt;/em&gt; that could happen: 1 success, &lt;em&gt;k&lt;/em&gt; successes, or any number in between. Thus we subtract the probability of &lt;em&gt;k&lt;/em&gt; failures from 1 to obtain the probability of the complement. This corresponds to the related questions posed initially: what is the probability of at least one success in &lt;em&gt;k&lt;/em&gt; independent runs of a Bernoulli trial?&lt;a href=&#34;#note2&#34; id=&#34;note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note1&#34; href=&#34;#note1ref&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; See the 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Gambler%27s_fallacy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gambler&amp;rsquo;s fallacy&lt;/a&gt;
+ if you don&amp;rsquo;t believe that the next trial always has probability &lt;em&gt;p&lt;/em&gt; of success!&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;note2&#34; href=&#34;#note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; This question has many applications. A fun one is the probability of obtaining a rare drop from a video game boss after a certain number of kills.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Compartment Models in Epidemiology Part 1</title>
       <link>/project/sir_model/</link>
       <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
@@ -548,14 +598,6 @@ The game is filled with fun Peter-MJ interactions, another favorite of mine bein
  for a short tutorial.&lt;/p&gt;
 &lt;p&gt;&lt;a id=&#34;note2&#34; href=&#34;#note2ref&#34;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; You may wish to Google regular expressions to learn some more tools that enhance the functionality of &lt;code&gt;grep&lt;/code&gt; and other command line arguments.]&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/project/luckandprobability/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/luckandprobability/</guid>
-      <description></description>
     </item>
     
   </channel>
