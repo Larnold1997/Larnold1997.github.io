@@ -525,7 +525,7 @@
 <blockquote>
 <p><em>Exercise: type <code>git init</code></em></p>
 </blockquote>
-<p>Terminal will output  <code>Initialized empty Git repository in /path/GitTutorial/.git/</code> where <code>path</code> specifies the location of <code>GitTutorial/</code>.  This empty Git repository is hidden; note the differnces of <code>ls</code> and <code>ls -a</code> in <code>GitTutorial/</code><a href="#note2" id="note2ref"><sup>2</sup></a>.</p>
+<p>Terminal will output  <code>Initialized empty Git repository in /path/GitTutorial/.git/</code> where <code>path</code> specifies the location of <code>GitTutorial/</code>.  This empty Git repository is hidden; note the differences of <code>ls</code> and <code>ls -a</code> in <code>GitTutorial/</code><a href="#note2" id="note2ref"><sup>2</sup></a>.</p>
 <ol start="2">
 <li>Saving Using <code>git add</code> and <code>git commit</code></li>
 </ol>
@@ -540,7 +540,7 @@
 <ol start="3">
 <li>Making Changes to Your Git Repository</li>
 </ol>
-<p>Suppose you add new files/directories or make changes to existing files in your Git repository. These changes are not automically stored by Git; you must tell Git precisely what you want to add every time you want to make a commit. Git is very flexible in what it allows you to commit: you can choose to commit a single modified file, everything that has been modified, or anywhere in between.</p>
+<p>Suppose you add new files/directories or make changes to existing files in your Git repository. These changes are not automatically stored by Git; you must tell Git precisely what you want to add every time you want to make a commit. Git is very flexible in what it allows you to commit: you can choose to commit a single modified file, everything that has been modified, or anywhere in between.</p>
 <ul>
 <li><code>git add file</code> stages <code>file</code> only.</li>
 <li><code>git add file1 file2</code> stages <code>file1</code> and <code>file2</code>; this is extendable to any number of files. Alternatively, you could use <code>git add file1</code> and <code>git add file2</code> as separate commands.</li>
@@ -556,7 +556,7 @@
 <ol start="4">
 <li>Branches: Creating Diverging Workflows with <code>git branch</code> and <code>git switch</code></li>
 </ol>
-<p>One of the most useful features of Git is its ability to create <em>branches</em>, new lines of development that can build on existing work without messing anything up <a href="#note5" id="note5ref"><sup>5</sup></a>. For example, you might want to experiment in a sandbox environment before making a (more) permanant change to your repository, or you may want to create a separate workflow line for your personal contributions to a group project. Changes on one branch do not automatically show up on another branch.</p>
+<p>One of the most useful features of Git is its ability to create <em>branches</em>, new lines of development that can build on existing work without messing anything up <a href="#note5" id="note5ref"><sup>5</sup></a>. For example, you might want to experiment in a sandbox environment before making a (more) permanent change to your repository, or you may want to create a separate workflow line for your personal contributions to a group project. Changes on one branch do not automatically show up on another branch.</p>
 <p>The command <code>git branch branch_name</code> creates a branch called <code>branch_name</code>. <code>git branch</code> without specifying <code>branch_name</code> will list existing branches. The primary/original branch is named <code>master</code> and the branch you are currently on is marked with an asterisk (<code>*</code>). The command <code>git switch branch_name</code> switches your repository to <code>branch_name</code> as long as a branch with that name exists.</p>
 <blockquote>
 <p><em>Exercise: type <code>git branch</code>. Then create a new branch called <code>feature</code>, use <code>git switch</code> to switch to <code>feature</code>, and type <code>git branch</code> again.</em></p>
@@ -628,29 +628,29 @@
 <li>Undoing Commits and Changes: <code>git reset</code> and <code>git revert</code></li>
 </ol>
 <p>Suppose you staged the wrong file to commit, or you staged the correct one prematurely. <code>git reset file</code> will remove <code>file</code> from the index. <code>git reset</code> on its own will unstage all due changes.</p>
-<p>Alternatively, suppose that you not only staged the wrong file(s), but you also commited the changes. <code>git revert HEAD</code> tells Git to create a new commit which is an inverse of the previous commit: anything deleted in the most recent commit will be added, and anything added in the most recent commit will be deleted. This is ideal for published changes because it preserves the true history of the repository. <code>git revert</code> can also be used to undo multiple commits, using either <code>git &lt;hash-or-ref&gt;</code> to revert to a specific commit or <code>git revert HEAD~N</code> where <code>N</code> is the number of commits you wish to revert (e.g. <code>git revert HEAD~2</code> reverts two commits).</p>
-<p><code>git revert</code> does not delete the undesired commits; if this is your intention, <code>use git reset --hard &lt;hash-or-ref&gt;</code> The <code>--hard</code> option reverts everything back to the specified commit, including reference pointers, the staging index, and your working directory. Thus not only does this command revert to a previous commit, it also deletes all working changes. To avoid losing any working changes, you can use <code>stash</code> to save your working changes before reseting and <code>stash pop</code> to recover the changes after reseting.</p>
-<p><code>git reset</code> also has a <code>--soft</code> option that works only affects the commit history, not your working directory or staging index. This is likely the best option if you have uncommited changes that you want to keep.</p>
+<p>Alternatively, suppose that you not only staged the wrong file(s), but you also committed the changes. <code>git revert HEAD</code> tells Git to create a new commit which is an inverse of the previous commit: anything deleted in the most recent commit will be added, and anything added in the most recent commit will be deleted. This is ideal for published changes because it preserves the true history of the repository. <code>git revert</code> can also be used to undo multiple commits, using either <code>git &lt;hash-or-ref&gt;</code> to revert to a specific commit or <code>git revert HEAD~N</code> where <code>N</code> is the number of commits you wish to revert (e.g. <code>git revert HEAD~2</code> reverts two commits).</p>
+<p><code>git revert</code> does not delete the undesired commits; if this is your intention, <code>use git reset --hard &lt;hash-or-ref&gt;</code> The <code>--hard</code> option reverts everything back to the specified commit, including reference pointers, the staging index, and your working directory. Thus not only does this command revert to a previous commit, it also deletes all working changes. To avoid losing any working changes, you can use <code>stash</code> to save your working changes before resetting and <code>stash pop</code> to recover the changes after resetting.</p>
+<p><code>git reset</code> also has a <code>--soft</code> option that works only affects the commit history, not your working directory or staging index. This is likely the best option if you have uncommitted changes that you want to keep.</p>
 <blockquote>
 <p><em>Exercise: play around with <code>git reset</code> and <code>git revert</code> to undo changes made to your repository.</em></p>
 </blockquote>
 <ol start="10">
 <li>Move, Copy, Rename, and Delete: <code>git mv</code>, <code>git cp</code>, and <code>git rm</code></li>
 </ol>
-<p>Git has built-in commands to move, rename, copy, and delete files. <code>git mv</code>, <code>git cp</code>, and <code>git rm</code> perform analagously to <code>mv</code>, <code>cp</code>, and <code>rm</code>. The benefit of using these Git commands is that they automatically add the file to the index so that you only have to commit the changes.</p>
+<p>Git has built-in commands to move, rename, copy, and delete files. <code>git mv</code>, <code>git cp</code>, and <code>git rm</code> perform analogously to <code>mv</code>, <code>cp</code>, and <code>rm</code>. The benefit of using these Git commands is that they automatically add the file to the index so that you only have to commit the changes.</p>
 <blockquote>
 <p><em>Exercise: play around with <code>git mv</code>, <code>git cp</code>, and <code>git rm</code></em></p>
 </blockquote>
 <ol start="11">
 <li>Fully Deleting a Git Repository</li>
 </ol>
-<p>Finally, suppose that after a series of commits, branches, and merges, everything is up-to-date on and accurate on <code>master</code> and you want to start fresh with a new Git repository. The command <code>rm -rf .git</code> deletes the <code>.git/</code> repository and leaves only the working diretory. <code>git init</code> can be used on this clean directory to start a new workflow. As with any use of <code>rm</code>, use with caution!</p>
+<p>Finally, suppose that after a series of commits, branches, and merges, everything is up-to-date on and accurate on <code>master</code> and you want to start fresh with a new Git repository. The command <code>rm -rf .git</code> deletes the <code>.git/</code> repository and leaves only the working directory. <code>git init</code> can be used on this clean directory to start a new workflow. As with any use of <code>rm</code>, use with caution!</p>
 <h2 id="aditional-resources">Aditional Resources</h2>
 <p>If you want Git help directly in the terminal, type <code>man gittutorial</code> or <code>man giteveryday</code>.</p>
 <p>If you made a mistake and are unsure how to fix it, check out 
 <a href="https://ohshitgit.com/" target="_blank" rel="noopener">Oh Shit, Git!?</a>
 </p>
-<p>For a textbook writen by the authors of Git, see 
+<p>For a textbook written by the authors of Git, see 
 <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Pro Git</a>
 .</p>
 <p><a id="note1" href="#note1ref"><sup>1</sup></a> For more information, visit 
