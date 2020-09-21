@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Introduction to Markov Chains">
+  <meta name="description" content="Limiting Behavior">
 
   
-  <link rel="alternate" hreflang="en-us" href="/project/markovchain1/">
+  <link rel="alternate" hreflang="en-us" href="/project/markovchain2/">
 
   
 
@@ -215,7 +215,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/project/markovchain1/">
+  <link rel="canonical" href="/project/markovchain2/">
 
   
   
@@ -228,15 +228,15 @@
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Home">
-  <meta property="og:url" content="/project/markovchain1/">
-  <meta property="og:title" content="Markov Chains Part 1 | Home">
-  <meta property="og:description" content="Introduction to Markov Chains"><meta property="og:image" content="/project/markovchain1/featured.jpg">
-  <meta property="twitter:image" content="/project/markovchain1/featured.jpg"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="/project/markovchain2/">
+  <meta property="og:title" content="Markov Chains Part 2 | Home">
+  <meta property="og:description" content="Limiting Behavior"><meta property="og:image" content="/project/markovchain2/featured.jpg">
+  <meta property="twitter:image" content="/project/markovchain2/featured.jpg"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-09-07T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-09-21T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-09-07T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-09-21T00:00:00&#43;00:00">
   
 
   
@@ -260,16 +260,16 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/project/markovchain1/"
+    "@id": "/project/markovchain2/"
   },
-  "headline": "Markov Chains Part 1",
+  "headline": "Markov Chains Part 2",
   
   "image": [
-    "/project/markovchain1/featured.jpg"
+    "/project/markovchain2/featured.jpg"
   ],
   
-  "datePublished": "2020-09-07T00:00:00Z",
-  "dateModified": "2020-09-07T00:00:00Z",
+  "datePublished": "2020-09-21T00:00:00Z",
+  "dateModified": "2020-09-21T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -284,7 +284,7 @@
       "url": "img//"
     }
   },
-  "description": "Introduction to Markov Chains"
+  "description": "Limiting Behavior"
 }
 </script>
 
@@ -302,7 +302,7 @@
 
 
 
-  <title>Markov Chains Part 1 | Home</title>
+  <title>Markov Chains Part 2 | Home</title>
 
 </head>
 
@@ -430,7 +430,7 @@
 
 
 <div class="article-container pt-3">
-  <h1>Markov Chains Part 1</h1>
+  <h1>Markov Chains Part 2</h1>
 
   
 
@@ -448,7 +448,7 @@
     
       
     
-    Sep 7, 2020
+    Sep 21, 2020
   </span>
   
 
@@ -485,7 +485,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
-    <img src="/project/markovchain1/featured_hub6c7e7d86afea672236705692d795f1d_350916_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
+    <img src="/project/markovchain2/featured_hub6c7e7d86afea672236705692d795f1d_350916_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
     
   </div>
 </div>
@@ -495,29 +495,28 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>This post is an introduction to the Markov chain, a common stochastic modeling framework to simulate random phenomena.</p>
-<h2 id="a-motivating-example-susceptible-infected-susceptible-sis-model">A Motivating Example: Susceptible-Infected-Susceptible (SIS) Model</h2>
-<p>At any given time, an individual is either <em>infected</em> with a disease or is healthy, i.e. is <em>susceptible</em> to becoming infected. Over an extended period of time (e.g. a year), an individual is likely to experience both of these <em>states</em>. Suppose we observe an individual over a sequence of days <a href="https://www.codecogs.com/eqnedit.php?latex=n&space;=&space;1,&space;2,&space;..." target="_blank"><img src="https://latex.codecogs.com/gif.latex?n&space;=&space;1,&space;2,&space;..." title="n = 1, 2, ..." /></a> and classify this individual on day <em>n</em> as:</p>
-<p><a href="https://www.codecogs.com/eqnedit.php?latex=X_n&space;=&space;\begin{cases}&space;I&space;&&space;\text{if&space;infected}\\&space;S&space;&&space;\text{if&space;susceptible}\\&space;\end{cases}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_n&space;=&space;\begin{cases}&space;I&space;&&space;\text{if&space;infected}\\&space;S&space;&&space;\text{if&space;susceptible}\\&space;\end{cases}" title="X_n = \begin{cases} I & \text{if infected}\\ S & \text{if susceptible}\\ \end{cases}" /></a></p>
-<p>There is some <em>probability</em> <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha" title="\alpha" /></a> that an infected individual remains infected the following day; in this simple scenario, there must therefore be a probability <a href="https://www.codecogs.com/eqnedit.php?latex=1&space;-&space;\alpha" target="_blank"><img src="https://latex.codecogs.com/gif.latex?1&space;-&space;\alpha" title="1 - \alpha" /></a> that the individual instead <em>transitions</em> to the susceptible state the following day<a href="#note1" id="note1ref"><sup>1</sup></a>. Likewise, we can apply this same reasoning to deduce that a susceptible individual will remain susceptible the following day with probability <a href="https://www.codecogs.com/eqnedit.php?latex=\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" /></a> or will transition to infected with probability <a href="https://www.codecogs.com/eqnedit.php?latex=1&space;-&space;\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?1&space;-&space;\beta" title="1 - \beta" /></a></p>
-<p>With fairly high accuracy, we can guess how an individual will feel tomorrow based only on how he/she feels today. In other words, there is no need to consider how an individual felt before day <em>n</em> in order to guess how an individual is likely to feel on day <em>n + 1</em>. Thus, the values of <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha" title="\alpha" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" /></a> apply regardless of the individual&rsquo;s health history. We call this one-step memory property the <em>Makrov property</em>; it can be interpreted as &ldquo;given the present, the future does not depend on the past.&rdquo;</p>
-<p><em>Markov chains</em> (MCs) are a type of stochastic (random) mathematical model that allows us to describe this scenario more formally. This math is useful for many reasons; for example, we can use it to compute the percentage of days that an individual is expected to be sick, or the number of individuals sick simultaneously during an epidemic.</p>
-<h2 id="mathematical-notation">Mathematical Notation</h2>
-<p>Formally, a Markov chain is a stochastic process on the <em>state space</em> <a href="https://www.codecogs.com/eqnedit.php?latex=S&space;=&space;\{1,&space;2,&space;\dots,&space;s\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S&space;=&space;\{1,&space;2,&space;\dots,&space;s\}" title="S = \{1, 2, \dots, s\}" /></a> (i.e. the chain has <em>s</em> possible states) that has one-step memory. Importantly, the Markov chain assumes a <em>discrete</em> state-space<a href="#note2" id="note1ref"><sup>2</sup></a>. The <em>transtion probability</em> from state <em>i</em> to state <em>j</em> is given by:</p>
-<p><a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{P}(X_n&space;=&space;j&space;|&space;X_{n-1}&space;=&space;i,&space;X_{n-2}&space;=&space;x_{n-2},&space;\dots,&space;X_0&space;=&space;x_o)&space;=&space;\mathcal{P}(X_n&space;=&space;j&space;|&space;X_{n-1}&space;=&space;i)&space;=&space;P_{ij}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{P}(X_n&space;=&space;j&space;|&space;X_{n-1}&space;=&space;i,&space;X_{n-2}&space;=&space;x_{n-2},&space;\dots,&space;X_0&space;=&space;x_o)&space;=&space;\mathcal{P}(X_n&space;=&space;j&space;|&space;X_{n-1}&space;=&space;i)&space;=&space;P_{ij}" title="\mathcal{P}(X_n = j | X_{n-1} = i, X_{n-2} = x_{n-2}, \dots, X_0 = x_o) = \mathcal{P}(X_n = j | X_{n-1} = i) = P_{ij}" /></a></p>
-<p>Translating from math-speak to English: the probability that the Markov chain will be in state <em>j</em> at time-step <em>n</em> <a href="https://www.codecogs.com/eqnedit.php?latex=X_n&space;=&space;j" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_n&space;=&space;j" title="X_n = j" /></a> given (| is read as &ldquo;given&rdquo;) that the Markov chain is in state <em>i</em> at time-step <em>n-1</em>, i.e. <a href="https://www.codecogs.com/eqnedit.php?latex=X_{n-1}&space;=&space;i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_{n-1}&space;=&space;i" title="X_{n-1} = i" /></a> depends <em>only</em> on the fact that <a href="https://www.codecogs.com/eqnedit.php?latex=X_{n-1}&space;=&space;i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_{n-1}&space;=&space;i" title="X_{n-1} = i" /></a> and we can ignore all previous realizations of the Markov chain.</p>
-<h2 id="back-to-the-sis-model-constructing-the-transition-probablity-matrix">Back to the SIS Model: Constructing the Transition Probablity Matrix</h2>
-<p>There are two states in the SIS model: <a href="https://www.codecogs.com/eqnedit.php?latex=S&space;=&space;\{Infected,&space;Susceptible\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S&space;=&space;\{Infected,&space;Susceptible\}" title="S = \{Infected, Susceptible\}" /></a> The transition probabilities are <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha" title="\alpha" /></a> <a href="https://www.codecogs.com/eqnedit.php?latex=1&space;-&space;\alpha" target="_blank"><img src="https://latex.codecogs.com/gif.latex?1&space;-&space;\alpha" title="1 - \alpha" /></a> <a href="https://www.codecogs.com/eqnedit.php?latex=\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\beta" title="\beta" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=1&space;-&space;\beta" target="_blank"><img src="https://latex.codecogs.com/gif.latex?1&space;-&space;\beta" title="1 - \beta" /></a> as defined above, leading to the following <em>transition probability matrix</em> (TPM):</p>
-<p><a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{P}&space;=&space;\begin{bmatrix}&space;\alpha&space;&&space;1&space;-&space;\alpha&space;\\&space;1&space;-&space;\beta&space;&&space;\beta&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{P}&space;=&space;\begin{bmatrix}&space;\alpha&space;&&space;1&space;-&space;\alpha&space;\\&space;1&space;-&space;\beta&space;&&space;\beta&space;\end{bmatrix}" title="\mathbf{P} = \begin{bmatrix} \alpha & 1 - \alpha \\ 1 - \beta & \beta \end{bmatrix}" /></a></p>
-<p>The rows of this matrix correspond to the current state (an individual&rsquo;s infection status today), while the columns of this matrix correspond to the next state (an individual&rsquo;s infection status tomorrow). Each entry of this matrix, therefore, represents the probability that a transition from state <em>i</em> to state <em>j</em> will occur in a single step. It is a specific example of a <em>probabilistic matrix</em>, which has the properties of rows that sum to 1 and entries that are bounded between 0 and 1.</p>
-<p>Transition probability matrices are necessary for most of the &ldquo;useful&rdquo; math associated with MCs. As a brief example, multiplying the TPM by itself yields the 2-step transition probability matrix, which in the SIS example, represents the probability an individual has infection status <em>j</em> the <em>day after tomorrow</em>, given that the individual currently has infection status <em>i</em><a href="#note1" id="note3ref"><sup>3</sup></a>.</p>
-<h2 id="odes-and-mcs-a-comparison">ODEs and MCs: A Comparison</h2>
-<p>
-<a href="https://larnold1997.github.io/project/sir_model/" target="_blank" rel="noopener">Elsewhere,</a>
- I have presented a very similar model for infectious diseases using ordinary differential equations (ODEs). Both frameworks are equally valid and can be used to answer many of the same questions. However, there is a notable difference between these two types of models. An ODE model is deterministic, i.e. it will <em>always</em> yield the same answer using the same parameters and set of initial conditions. MCs, on the other hand, are <em>stochastic</em>, i.e. they are based in randomness, and any values obtained using MCs must be assessed probabilistically. Therefore, before applying either framework, a modeler must decide what type of answer they hope to get for their research question(s).</p>
-<p><a id="note1" href="#note1ref"><sup>1</sup></a> Recall from basic probability that if one of two events always occurs, then the probability that each of them occurs must sum to 1.</p>
-<p><a id="note2" href="#note1ref"><sup>2</sup></a> In the context of the SIS example, this means an individual is either susceptible or infected; there is no intermediate state.</p>
-<p><a id="note3" href="#note1ref"><sup>3</sup></a> In a future post, I will explore how repeating this process yields the long-term probabilities associated with the Markov chain.</p>
+      <p>This post is the second in a series about Markov chains, a common stochastic modeling framework to simulate random phenomena. See 
+<a href="https://larnold1997.github.io/project/markovchain1/" target="_blank" rel="noopener">Part 1</a>
+ if you are not familiar with Markov chains, or if you simply need a refresher.</p>
+<p>Often, when using a Markov chain to model a real-world phenomenon, it is important to study the end behavior of the Markov chain. For instance, does the chain always end in a single state, independent of the starting state? Are some - but not all - of the states possible in the long-term? If multiple states are possible, which are more likely, and can we quantify the probability of being in one state specifically? This post will attempt to explore these questions.</p>
+<h2 id="absorbing-makrov-chains">Absorbing Makrov Chains</h2>
+<p>An <em>absorbing Markov chain</em> has at least one absorbing state. State <em>i</em> is an <em>absorbing</em> state if the Markov chain cannot leave state <em>i</em>:</p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=P_{ii}&space;=&space;1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P_{ii}&space;=&space;1" title="P_{ii} = 1" /></a></p>
+<p>For example, in the simplest SIR model for infectious diseases, an individual develops immunity after recovering from the disease. The recovered compartment, therefore, would be modeled as an absorbing state, since there is no way for a recovered individual to transition to being either susceptible or infected. Note that if state <em>i</em> is not absorbing then it is <em>transient</em>, since the Markov chain can only be in state <em>i</em> for a finite amount of time before transitioning to an absorbing state that prevents a return to state <em>i</em>.</p>
+<p>Let an absorbing Markov chain with have <em>t</em> transient states and <em>r</em> absorbing states. Then its transition probability matrix (TPM) can be written in the following block form:</p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{P}&space;=&space;\begin{bmatrix}&space;\mathbf{Q}&space;&&space;\mathbf{R}&space;\\&space;\mathbf{0}&space;&&space;\mathbf{S}&space;\end{bmatrix}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{P}&space;=&space;\begin{bmatrix}&space;\mathbf{Q}&space;&&space;\mathbf{R}&space;\\&space;\mathbf{0}&space;&&space;\mathbf{S}&space;\end{bmatrix}" title="\mathbf{P} = \begin{bmatrix} \mathbf{Q} & \mathbf{R} \\ \mathbf{0} & \mathbf{S} \end{bmatrix}" /></a></p>
+<p>where <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{Q}&space;\in&space;\mathbb{R}^{t&space;\times&space;t}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{Q}&space;\in&space;\mathbb{R}^{t&space;\times&space;t}" title="\mathbf{Q} \in \mathbb{R}^{t \times t}" /></a> is a TPM from one transient state to another, <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{R}&space;\in&space;\mathbb{R}^{t&space;\times&space;r}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{R}&space;\in&space;\mathbb{R}^{t&space;\times&space;r}" title="\mathbf{R} \in \mathbb{R}^{t \times r}" /></a> is a TPM to go from a transient state to an absorbing state, <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{0}&space;\in&space;\mathbb{R}^{r&space;\times&space;t}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{0}&space;\in&space;\mathbb{R}^{r&space;\times&space;t}" title="\mathbf{0} \in \mathbb{R}^{r \times t}" /></a> is the zero matrix, and <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{S}&space;\in&space;\mathbb{R}^{r&space;\times&space;r}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{S}&space;\in&space;\mathbb{R}^{r&space;\times&space;r}" title="\mathbf{S} \in \mathbb{R}^{r \times r}" /></a> is the identity matrix, representing the TPM for the absorbing states.</p>
+<p>The matrices <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{Q},&space;\mathbf{R},&space;\text{and&space;}\mathbf{S}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{Q},&space;\mathbf{R},&space;\text{and&space;}\mathbf{S}" title="\mathbf{Q}, \mathbf{R}, \text{and }\mathbf{S}" /></a> are very important because they can be used in many important calculations. One of the most common questions when analyzing an absorbing Markov chain is the expected number of visits to a transient state <em>j</em> starting from a transient state <em>i</em> before being absorbed. The probability of transitioning from <em>i</em> to <em>j</em> in exactly <em>k</em> steps is the (<em>i,j</em>) entry of <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{Q}^k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{Q}^k" title="\mathbf{Q}^k" /></a> Summing this for all <em>k</em> from 0 to infinity yields the <em>fundamental matrix</em>. It can be proven that <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{N}=\sum&space;_{k=0}^{\infty}\mathbf{Q}^{k}=(\mathbf{I_{t}}-\mathbf{Q})^{-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{N}=\sum&space;_{k=0}^{\infty}\mathbf{Q}^{k}=(\mathbf{I_{t}}-\mathbf{Q})^{-1}" title="\mathbf{N}=\sum _{k=0}^{\infty}\mathbf{Q}^{k}=(\mathbf{I_{t}}-\mathbf{Q})^{-1}" /></a> where <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{I_{t}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{I_{t}}" title="\mathbf{I_{t}}" /></a> is the <em>t</em>-by-<em>t</em> identity matrix. The (<em>i,j</em>) entry of the fundamental matrix is the expected number of times the chain is in state <em>j</em>, given that the chain started in state <em>i</em>.</p>
+<p>The name fundamental matrix derives from the fact that the matrix can be used to obtain many other useful quantities. For example, the expected number of steps before being absorbed when starting in transient state <em>i</em> is the <em>i</em>th entry of the vector <a href="https://www.codecogs.com/eqnedit.php?latex={\displaystyle&space;\mathbf&space;{t}&space;=&space;\mathbf{N}\mathbf&space;{1}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?{\displaystyle&space;\mathbf&space;{t}&space;=&space;\mathbf{N}\mathbf&space;{1}}" title="{\displaystyle \mathbf {t} = \mathbf{N}\mathbf {1}}" /></a> Additionally, the probability of being absorbed by absorbing state <em>j</em> when starting in transient state <em>i</em> is given by the (<em>i,j</em>) entry of <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{H}&space;=&space;\mathbf{N}\mathbf{R}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{H}&space;=&space;\mathbf{N}\mathbf{R}" title="\mathbf{H} = \mathbf{N}\mathbf{R}" /></a></p>
+<h2 id="stationary-distribution">Stationary Distribution</h2>
+<p>Many real-world phenomena are not described by an absorbing Markov chain. For example, consider a simple weather model of rainy days and sunny days. Rain clouds and sunshine are always possible, so neither state is transient nor absorbing. Instead, both states are recurrent. State <em>i</em> of a Markov chain is <em>recurrent</em> if the chain is guaranteed to return to state <em>i</em> within a finite amount of time once it leaves state <em>i</em>; equivalently, state <em>i</em> is recurrent if the Markov chain visits this state infinitely often.</p>
+<p>When dealing with a Markov chain of only recurrent states, studying the end behavior becomes trickier. All states are possible in the long-term, so we can only talk in terms of probability when describing what will happen in the long-run. A probability vector<a href="#note1" id="note1ref"><sup>1</sup></a> <a href="https://www.codecogs.com/eqnedit.php?latex=\pi" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\pi" title="\pi" /></a> on a Markov chain state space is called a <em>stationary distribution</em> of the TPM if</p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=\pi^T\mathbf{P}&space;=&space;\pi^T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\pi^T\mathbf{P}&space;=&space;\pi^T" title="\pi^T\mathbf{P} = \pi^T" /></a></p>
+<p>Under special conditions<a href="#note2" id="note2ref"><sup>2</sup></a>, which are true in most applications, the stationary distribution exists and is unique. Moreover,</p>
+<p><a href="https://www.codecogs.com/eqnedit.php?latex=\lim_{k&space;\to&space;\infty}&space;\mathbf{P}^k&space;=&space;\mathbf{1}\mathbf{\pi}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\lim_{k&space;\to&space;\infty}&space;\mathbf{P}^k&space;=&space;\mathbf{1}\mathbf{\pi}" title="\lim_{k \to \infty} \mathbf{P}^k = \mathbf{1}\mathbf{\pi}" /></a></p>
+<p>which, in words, means that, over the long run, independent of the starting state, the time that the Markov chain will spend in state <em>j</em> is approximately equal to the <em>j</em>th entry of the stationary distribution for all <em>j</em>. The stationary distribution, therefore, gives us a concise, mathematical description for the end behavior of the Markov chain!</p>
+<p><a id="note1" href="#note1ref"><sup>1</sup></a> A <em>probability vector</em> has the property that the entries, all of which are non-negative, sum to 1.</p>
+<p><a id="note2" href="#note2ref"><sup>2</sup></a> Specifically, the Markov chain needs to be irreducible and aperiodic.</p>
 
     </div>
 
@@ -546,7 +545,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/project/markovchain1/&amp;text=Markov%20Chains%20Part%201" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/project/markovchain2/&amp;text=Markov%20Chains%20Part%202" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -559,7 +558,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/project/markovchain1/&amp;t=Markov%20Chains%20Part%201" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/project/markovchain2/&amp;t=Markov%20Chains%20Part%202" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -572,7 +571,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Markov%20Chains%20Part%201&amp;body=/project/markovchain1/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Markov%20Chains%20Part%202&amp;body=/project/markovchain2/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -585,7 +584,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/project/markovchain1/&amp;title=Markov%20Chains%20Part%201" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/project/markovchain2/&amp;title=Markov%20Chains%20Part%202" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -598,7 +597,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Markov%20Chains%20Part%201%20/project/markovchain1/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Markov%20Chains%20Part%202%20/project/markovchain2/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -611,7 +610,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/project/markovchain1/&amp;title=Markov%20Chains%20Part%201" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/project/markovchain2/&amp;title=Markov%20Chains%20Part%202" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -674,6 +673,8 @@
   <div class="article-widget content-widget-hr">
     <h3>Related</h3>
     <ul>
+      
+      <li><a href="/project/markovchain1/">Markov Chains Part 1</a></li>
       
       <li><a href="/project/luckandprobability/">How Lucky am I (Statistically)?</a></li>
       
